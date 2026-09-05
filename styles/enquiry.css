@@ -1,0 +1,508 @@
+/* ==========================================================================
+   TECTORA FULL-BLEED CINEMATIC ENQUIRY PAGE
+   Federal Land Luxury Aesthetic: Unified Architectural Canvas,
+   Diagonal Gold Cut, Floating Crisp Form Card, Trust Badges
+   ========================================================================== */
+
+/* Page Body */
+.enquiry-page-body {
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   HERO FULL-BLEED ARCHITECTURAL SECTION
+   ========================================================================== */
+
+.enquiry-hero-section {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: calc(100vh - 78px);
+  background-color: #F8F9FA;
+  background-image: url('../assets/images/enquiry-hero-backdrop@2x.jpg?v=3');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 24px 0 36px;
+  overflow: hidden;
+}
+
+.enquiry-hero-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 36px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+/* Form Placement Column (Aligned on left of architectural canvas) */
+.enquiry-form-column {
+  width: 100%;
+  max-width: 420px;
+  margin-left: 24px;
+}
+
+/* Top Kicker */
+.enquiry-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+/* Headline */
+.enquiry-main-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.3rem, 3.4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.title-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #C8A45D 45%, #9E7D30 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.title-navy {
+  color: #0B1F3A;
+  display: inline-block;
+}
+
+/* Subtitle */
+.enquiry-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: #4A5568;
+  line-height: 1.45;
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   FLOATING CRISP WHITE FORM CARD
+   -------------------------------------------------------------------------- */
+
+.enquiry-card {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid rgba(226, 230, 238, 0.95);
+  box-shadow: 0 16px 36px -8px rgba(11, 31, 58, 0.09), 0 2px 6px rgba(0, 0, 0, 0.02);
+  padding: 20px 22px;
+  position: relative;
+  transition: box-shadow 0.25s ease;
+}
+
+.enquiry-card:hover {
+  box-shadow: 0 20px 45px -10px rgba(11, 31, 58, 0.13), 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+/* Form Inputs with Embedded Icons */
+.form-field-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.field-icon-wrap {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748B;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.field-icon-wrap svg {
+  width: 16px;
+  height: 16px;
+}
+
+.field-input {
+  width: 100%;
+  height: 42px;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E4DE;
+  border-radius: 8px;
+  padding: 0 14px 0 38px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: #1A1A1A;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.field-input::placeholder {
+  color: #94A3B8;
+  font-weight: 400;
+}
+
+.field-input:hover {
+  border-color: #CBD5E1;
+}
+
+.field-input:focus {
+  border-color: #C8A45D;
+  box-shadow: 0 0 0 3px rgba(200, 164, 93, 0.15);
+}
+
+.form-field-group:focus-within .field-icon-wrap {
+  color: #0B1F3A;
+}
+
+/* Custom Select Dropdown */
+.select-field-group {
+  position: relative;
+}
+
+.field-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding-right: 36px;
+  background-color: #FFFFFF;
+}
+
+.field-select:invalid,
+.field-select option[value=""] {
+  color: #94A3B8;
+}
+
+.field-select option {
+  color: #1A1A1A;
+  background: #FFFFFF;
+  padding: 8px 12px;
+}
+
+.select-chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+}
+
+.select-chevron svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Textarea Field */
+.textarea-group {
+  align-items: flex-start;
+}
+
+.textarea-icon-wrap {
+  top: 12px;
+  transform: none;
+}
+
+.field-textarea {
+  height: 72px;
+  padding-top: 10px;
+  resize: vertical;
+  min-height: 60px;
+  max-height: 150px;
+}
+
+/* Input Error State */
+.field-input.has-error {
+  border-color: #EF4444 !important;
+  background-color: #FEF2F2 !important;
+}
+
+/* Submit CTA Button */
+.btn-enquiry-submit {
+  width: 100%;
+  height: 44px;
+  background-color: #0B1F3A;
+  color: #FFFFFF;
+  border: 1px solid rgba(200, 164, 93, 0.35);
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-top: 4px;
+  box-shadow: 0 4px 14px rgba(11, 31, 58, 0.16);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-enquiry-submit:hover {
+  background-color: #071527;
+  border-color: #C8A45D;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(200, 164, 93, 0.38), 0 2px 6px rgba(11, 31, 58, 0.2);
+}
+
+.btn-enquiry-submit:active {
+  transform: translateY(0);
+}
+
+.btn-enquiry-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-arrow-icon {
+  transition: transform 0.2s ease;
+}
+
+.btn-enquiry-submit:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Security Note */
+.enquiry-security-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+.enquiry-security-note svg {
+  color: #94A3B8;
+}
+
+/* --------------------------------------------------------------------------
+   VALUE PROPOSITIONS / TRUST ICONS (4 in a row below card)
+   -------------------------------------------------------------------------- */
+
+.enquiry-trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding: 0 2px;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.trust-icon {
+  width: 20px;
+  height: 20px;
+  color: #0B1F3A;
+}
+
+.trust-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.22;
+  color: #334155;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 30px;
+  background-color: #CBD5E1;
+  margin: 0 6px;
+  flex-shrink: 0;
+}
+
+/* Bottom URL Mark */
+.enquiry-web-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding-left: 2px;
+}
+
+.web-mark-line {
+  width: 36px;
+  height: 2px;
+  background-color: #C8A45D;
+  display: block;
+}
+
+.web-mark-text {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #334155;
+  text-transform: uppercase;
+}
+
+/* Submission Feedback Banner */
+.enquiry-feedback-banner {
+  display: none;
+  background-color: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 12px;
+  animation: fadeInDown 0.3s ease forwards;
+}
+
+.enquiry-feedback-banner.show {
+  display: block;
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #065F46;
+  font-weight: 600;
+  font-size: 0.90rem;
+  margin-bottom: 4px;
+}
+
+.feedback-header svg {
+  color: #10B981;
+  flex-shrink: 0;
+}
+
+.feedback-body {
+  font-size: 0.80rem;
+  color: #047857;
+  line-height: 1.4;
+}
+
+.feedback-ref {
+  display: inline-block;
+  margin-top: 4px;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Tablets & Mobile Viewports)
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  .enquiry-hero-container {
+    padding: 0 24px;
+  }
+  .enquiry-form-column {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 980px) {
+  .enquiry-hero-section {
+    background-position: 72% top;
+    padding: 30px 0;
+  }
+
+  .enquiry-hero-container {
+    padding: 0 20px;
+  }
+
+  .enquiry-form-column {
+    max-width: 480px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 24px;
+    border-radius: 18px;
+    border: 1px solid rgba(226, 230, 238, 0.9);
+    box-shadow: 0 20px 48px -10px rgba(11, 31, 58, 0.12);
+  }
+}
+
+@media (max-width: 580px) {
+  .enquiry-hero-section {
+    padding: 20px 0 32px;
+  }
+
+  .enquiry-hero-container {
+    padding: 0 12px;
+  }
+
+  .enquiry-form-column {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .enquiry-card {
+    padding: 16px 14px;
+  }
+
+  .enquiry-main-title {
+    font-size: 2.1rem;
+  }
+
+  .enquiry-trust-row {
+    flex-wrap: wrap;
+    gap: 12px 6px;
+  }
+
+  .trust-item {
+    flex: 1 1 42%;
+  }
+
+  .trust-divider {
+    display: none;
+  }
+
+  .field-input {
+    height: 40px;
+    font-size: 0.86rem;
+  }
+}

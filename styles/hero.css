@@ -1,0 +1,316 @@
+/* ==========================================================================
+   TECTORA HERO SECTION - LIGHT THEME WITH FLOATING INQUIRY CARD
+   Full-Width Background Image, Light Overlay, Playfair Display & Inquiry Card
+   ========================================================================== */
+
+.hero-section-light {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  /* Full-width background image */
+  background-color: #FAFAF8;
+  background-image: url('../assets/images/hero-skyline.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Semi-transparent Light Overlay for High Readability */
+.hero-light-overlay {
+  position: absolute;
+  inset: 0;
+  /* Directional light gradient: richer on the left for text contrast, soft across the middle, natural image visibility */
+  background: linear-gradient(
+    90deg, 
+    rgba(250, 250, 248, 0.95) 0%, 
+    rgba(250, 250, 248, 0.88) 48%, 
+    rgba(250, 250, 248, 0.65) 100%
+  );
+  z-index: 1;
+}
+
+.hero-grid-split {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 820px;
+  position: relative;
+  z-index: 2;
+  padding: 90px 0 100px;
+}
+
+.hero-highlights-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-highlight-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--navy-primary);
+}
+
+.hero-highlight-item svg {
+  color: var(--gold-accent);
+}
+
+/* --------------------------------------------------------------------------
+   LEFT SIDE: HEADLINE, SUBTEXT & CTA BUTTONS
+   -------------------------------------------------------------------------- */
+
+.hero-text-col {
+  text-align: left;
+}
+
+.hero-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-bottom: 20px;
+}
+
+.hero-tagline::before {
+  content: '';
+  width: 24px;
+  height: 1.5px;
+  background-color: var(--gold-accent);
+}
+
+.hero-heading-main {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 4.4vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--navy-primary);
+  margin-bottom: 22px;
+}
+
+.hero-subtext-main {
+  font-family: var(--font-sans);
+  font-size: clamp(1.05rem, 1.25vw, 1.18rem);
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 38px;
+  max-width: 580px;
+}
+
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+  height: 48px;
+  padding: 0 32px;
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(11, 31, 58, 0.15);
+  transition: var(--transition);
+}
+
+.hero-btn-primary:hover {
+  background-color: var(--navy-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(11, 31, 58, 0.22);
+}
+
+.hero-btn-secondary {
+  height: 48px;
+  padding: 0 28px;
+  background-color: transparent;
+  color: var(--navy-primary);
+  border: 1.5px solid var(--navy-primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.hero-btn-secondary:hover {
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT SIDE: FLOATING INQUIRY FORM CARD (Real Estate UI Style)
+   -------------------------------------------------------------------------- */
+
+.hero-inquiry-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-floating);
+  position: relative;
+}
+
+.inquiry-card-header {
+  margin-bottom: 24px;
+}
+
+.inquiry-card-tag {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--gold-accent);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.inquiry-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  line-height: 1.25;
+}
+
+.inquiry-card-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Form Fields */
+.inquiry-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inquiry-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inquiry-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.inquiry-input,
+.inquiry-select,
+.inquiry-textarea {
+  width: 100%;
+  height: 42px;
+  background-color: #FAFAF8;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xs);
+  padding: 0 14px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: var(--transition);
+}
+
+.inquiry-input::placeholder,
+.inquiry-textarea::placeholder {
+  color: var(--text-dim);
+}
+
+.inquiry-input:focus,
+.inquiry-select:focus,
+.inquiry-textarea:focus {
+  background-color: #FFFFFF;
+  border-color: var(--gold-accent);
+  box-shadow: 0 0 0 3px rgba(200, 164, 93, 0.15);
+}
+
+.inquiry-textarea {
+  height: 80px;
+  padding: 10px 14px;
+  resize: vertical;
+}
+
+.inquiry-submit-btn {
+  height: 46px;
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(11, 31, 58, 0.15);
+  transition: var(--transition);
+  margin-top: 4px;
+}
+
+.inquiry-submit-btn:hover {
+  background-color: var(--navy-hover);
+  transform: translateY(-1px);
+}
+
+.inquiry-feedback-msg {
+  display: none;
+  padding: 10px 14px;
+  background: #EFFDF5;
+  border: 1px solid #B8F2D0;
+  border-radius: var(--radius-xs);
+  color: #065F46;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.inquiry-feedback-msg.show {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .hero-grid-split {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .hero-inquiry-card {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 580px) {
+  .hero-inquiry-card {
+    padding: 28px 20px;
+  }
+  .hero-heading-main {
+    font-size: 2.4rem;
+  }
+}

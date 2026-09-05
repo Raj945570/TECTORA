@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECTORA — Smart Infrastructure Procurement Platform</title>
+  <meta name="description" content="Connecting developers, contractors, and suppliers through a unified digital platform." />
+  
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/navbar.css" />
+  <link rel="stylesheet" href="styles/hero.css" />
+  <link rel="stylesheet" href="styles/sections.css" />
+
+  <!-- Auth Gatekeeper: Requires authentication before rendering homepage -->
+  <script src="scripts/auth-guard.js"></script>
+  <script>
+    if (window.TectoraAuth) {
+      window.TectoraAuth.requireAuth();
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. HEADER (Top Navigation)
+       ======================================================================== -->
+  <header class="tectora-header" id="tectoraHeader">
+    <div class="nav-container">
+      
+      <!-- Left: Logo (TECTORA) -->
+      <a href="/" class="brand-logo-wrap" aria-label="TECTORA Home">
+        <img 
+          src="assets/images/tectora-logo-new.png" 
+          alt="TECTORA" 
+          class="brand-actual-logo" 
+        />
+      </a>
+
+      <!-- Center: Menu (Home, About, Commercial, Services, Contact) -->
+      <nav class="nav-center" id="navCenter" aria-label="Main Navigation">
+        <ul class="nav-links-list">
+          <li class="nav-link-item"><a href="#home" class="nav-link is-active">Home</a></li>
+          <li class="nav-link-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-link-item"><a href="#commercial" class="nav-link">Commercial</a></li>
+          <li class="nav-link-item"><a href="#services" class="nav-link">Services</a></li>
+          <li class="nav-link-item"><a href="enquiry.html" class="nav-btn-enquiry">Enquiry Now</a></li>
+          <li class="nav-link-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Side: Search & CTA -->
+      <div class="nav-right">
+        <!-- Search bar -->
+        <div class="search-wrapper" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="search" 
+            id="navSearchInput"
+            class="search-input" 
+            placeholder="Search platform..." 
+            aria-label="Search platform"
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Auth Link -->
+        <a href="login.html" class="nav-auth-link">Sign In</a>
+
+        <!-- Button: "Get a Quote" -->
+        <a href="#contact" class="btn-quote" id="btnNavQuote">Get a Quote</a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. HERO SECTION (Full-Width Background Image + Floating Inquiry Card)
+       ======================================================================== -->
+  <main>
+    <section class="hero-section-light" id="home">
+      <!-- Light overlay for readability -->
+      <div class="hero-light-overlay"></div>
+
+      <div class="container">
+        <div class="hero-grid-split">
+          
+          <!-- Left Side Content -->
+          <div class="hero-text-col">
+            <div class="hero-tagline">
+              Digital Infrastructure Platform
+            </div>
+
+            <!-- Requested Headline -->
+            <h1 class="hero-heading-main">
+              Smart Infrastructure Procurement
+            </h1>
+
+            <!-- Requested Subtext -->
+            <p class="hero-subtext-main">
+              Connecting developers, contractors, and suppliers through a unified digital platform.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions-row">
+              <a href="enquiry.html" class="hero-btn-primary" id="btnHeroStartProject">
+                <span>Start Your Project</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#contact" class="hero-btn-secondary" id="btnHeroGetQuote">
+                <span>Get a Quote</span>
+              </a>
+            </div>
+
+            <!-- Platform Highlights Row (Replaces auto-loaded inquiry form) -->
+            <div class="hero-highlights-row">
+              <div class="hero-highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Verified Suppliers &amp; Materials</span>
+              </div>
+              <div class="hero-highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                  <line x1="9" y1="6" x2="9" y2="6.01"></line>
+                  <line x1="15" y1="6" x2="15" y2="6.01"></line>
+                  <line x1="9" y1="10" x2="9" y2="10.01"></line>
+                  <line x1="15" y1="10" x2="15" y2="10.01"></line>
+                </svg>
+                <span>Institutional Developers</span>
+              </div>
+              <div class="hero-highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline>
+                </svg>
+                <span>Turnkey EPC Execution</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. PLATFORM CORE OFFERINGS ("Everything You Need to Build")
+         ======================================================================== -->
+    <section class="section-wrapper" id="features">
+      <div class="container">
+        <div class="section-tag">Core Offerings</div>
+        <h2 class="section-title">Everything You Need to Build</h2>
+        <p class="section-subtitle">
+          Designed to streamline supply pipelines, verify quality benchmarks, and connect institutional builders with proven execution partners.
+        </p>
+
+        <div class="features-grid-4">
+          <!-- Card 1: Materials Marketplace -->
+          <a href="materials.html" class="feature-product-card" aria-label="Materials Marketplace">
+            <div class="feature-img-box">
+              <img src="assets/images/property-structural.jpg" alt="Materials Marketplace — TMT Rebars and Raw Materials" />
+            </div>
+            <div class="feature-body">
+              <h3 class="feature-card-title">Materials Marketplace</h3>
+              <p class="feature-card-desc">
+                Direct mill allocations for TMT steel rebars, structural concrete, and bulk aggregates with transparent index pricing.
+              </p>
+              <div class="feature-card-action">
+                <span>Explore</span> &rarr;
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2: Commercial Land & Sites -->
+          <a href="commercial.html" class="feature-product-card" aria-label="Commercial Land">
+            <div class="feature-img-box">
+              <img src="assets/images/property-land.jpg" alt="Commercial Land and Development Parcels" />
+            </div>
+            <div class="feature-body">
+              <h3 class="feature-card-title">Commercial Land</h3>
+              <p class="feature-card-desc">
+                Demarcated commercial parcels, mixed-use plots, and industrial corridors with verified legal title documentation.
+              </p>
+              <div class="feature-card-action">
+                <span>Explore</span> &rarr;
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3: Contractors & Consultants -->
+          <a href="contractors.html" class="feature-product-card" aria-label="Contractors & Consultants">
+            <div class="feature-img-box">
+              <img src="assets/images/hero-construction.jpg" alt="Contractors and Engineering Consultants" />
+            </div>
+            <div class="feature-body">
+              <h3 class="feature-card-title">Contractors & Consultants</h3>
+              <p class="feature-card-desc">
+                Audited EPC contractors, MEP specialists, and civil consultants with demonstrated project completion records.
+              </p>
+              <div class="feature-card-action">
+                <span>Explore</span> &rarr;
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4: Project Management -->
+          <a href="project-management.html" class="feature-product-card" aria-label="Project Management">
+            <div class="feature-img-box">
+              <img src="assets/images/hero-skyline.jpg" alt="Project Management & Site Monitoring" />
+            </div>
+            <div class="feature-body">
+              <h3 class="feature-card-title">Project Management</h3>
+              <p class="feature-card-desc">
+                Milestone tracking, material dispatch tracking, and third-party technical quality inspections.
+              </p>
+              <div class="feature-card-action">
+                <span>Explore</span> &rarr;
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. SERVICES SECTION (Enterprise Capabilities - 2 Column Grid)
+         ======================================================================== -->
+    <section class="section-wrapper" id="services" style="background-color: var(--bg-alt); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+      <div class="container">
+        <div class="section-tag">Capabilities</div>
+        <h2 class="section-title">Built for Institutional Scale</h2>
+        <p class="section-subtitle">
+          TECTORA brings structured efficiency to procurement workflows, vendor contracting, and technical due diligence.
+        </p>
+
+        <div class="services-split-grid">
+          <!-- Left: 4 Capability Cards -->
+          <div class="services-accordion-list">
+            
+            <div class="service-item-row is-active">
+              <h3 class="service-item-title">
+                <span>Procurement Management</span>
+                <span style="font-size: 0.8rem; color: var(--gold-accent);">01</span>
+              </h3>
+              <p class="service-item-desc">
+                Consolidate multi-site material requisitions into unified purchase orders with scheduled dispatch and batch test documentation.
+              </p>
+            </div>
+
+            <div class="service-item-row">
+              <h3 class="service-item-title">
+                <span>Tender & RFQ System</span>
+                <span style="font-size: 0.8rem; color: var(--gold-accent);">02</span>
+              </h3>
+              <p class="service-item-desc">
+                Deploy standardized competitive bidding for EPC contracts and material supply with automated comparative evaluation.
+              </p>
+            </div>
+
+            <div class="service-item-row">
+              <h3 class="service-item-title">
+                <span>Verified Vendor Network</span>
+                <span style="font-size: 0.8rem; color: var(--gold-accent);">03</span>
+              </h3>
+              <p class="service-item-desc">
+                Every contractor, fabricator, and supplier is audited for safety compliance, financial track record, and structural quality.
+              </p>
+            </div>
+
+            <div class="service-item-row">
+              <h3 class="service-item-title">
+                <span>Engineering Consultation</span>
+                <span style="font-size: 0.8rem; color: var(--gold-accent);">04</span>
+              </h3>
+              <p class="service-item-desc">
+                Direct engagement with chartered structural engineers for seismic analysis, MEP layout coordination, and sustainability reviews.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Right: Visual Feature with Badge -->
+          <div class="services-visual-wrap">
+            <img src="assets/images/hero-construction.jpg" alt="TECTORA Active Civil Construction" />
+            <div class="service-visual-badge">
+              <div class="badge-label">Audited Quality</div>
+              <div class="badge-headline">Reliable Supply Execution</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. COMMERCIAL SHOWCASE SECTION (Interactive Image Gallery)
+         ======================================================================== -->
+    <section class="section-wrapper" id="commercial">
+      <div class="container">
+        <div class="section-tag">Commercial Showcase</div>
+        <h2 class="section-title">Flagship Developments</h2>
+        <p class="section-subtitle">
+          Representative commercial facilities and mixed-use infrastructure executed through the TECTORA platform.
+        </p>
+
+        <div class="property-showcase-box">
+          <div class="showcase-grid-split">
+            
+            <!-- Left: Interactive Image Slider -->
+            <div class="slider-visual-col">
+              <div class="slider-main-viewport">
+                <img id="showcaseMainImg" src="assets/images/property-living.jpg" alt="Commercial Development Interior" />
+                <div class="slider-status-pill" id="sliderStatusPill">Executive Floor</div>
+              </div>
+
+              <!-- Thumbnails -->
+              <div class="slider-thumbnails-row">
+                <div class="slider-thumb-item is-active" title="Executive Floor">
+                  <img src="assets/images/property-living.jpg" alt="Executive Floor Thumbnail" />
+                </div>
+                <div class="slider-thumb-item" title="Cafeteria & Lounge">
+                  <img src="assets/images/property-kitchen.jpg" alt="Lounge Thumbnail" />
+                </div>
+                <div class="slider-thumb-item" title="Structural Shell">
+                  <img src="assets/images/property-structural.jpg" alt="Structural Shell Thumbnail" />
+                </div>
+                <div class="slider-thumb-item" title="Masterplan Site">
+                  <img src="assets/images/property-land.jpg" alt="Masterplan Site Thumbnail" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Commercial Metadata -->
+            <div class="showcase-info-col">
+              <div class="property-estate-tag">Commercial Landmark</div>
+              <h3 class="property-estate-title">Cyber City Commercial Hub</h3>
+              
+              <div class="property-estate-location">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Financial District Corporate Corridor</span>
+              </div>
+
+              <div class="property-highlights-list">
+                <div class="highlight-brick">
+                  <div class="highlight-val">42 Storeys</div>
+                  <div class="highlight-desc">RCC Monolithic Core</div>
+                </div>
+                <div class="highlight-brick">
+                  <div class="highlight-val">LEED Gold</div>
+                  <div class="highlight-desc">Energy Efficient Envelope</div>
+                </div>
+                <div class="highlight-brick">
+                  <div class="highlight-val">Grade-A Space</div>
+                  <div class="highlight-desc">45,000 Sq.Ft. Floor Plates</div>
+                </div>
+                <div class="highlight-brick">
+                  <div class="highlight-val">Zone V Seismic</div>
+                  <div class="highlight-desc">Engineered Base Isolation</div>
+                </div>
+              </div>
+
+              <div class="showcase-btns-row">
+                <a href="#contact" class="btn btn-primary">Inquire Now</a>
+                <button type="button" class="btn btn-secondary" onclick="showToast('Commercial prospectus initiated for download.')">
+                  Download Brochure
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. CONTACT SECTION (Clean Minimal Form + Map + Info)
+         ======================================================================== -->
+    <section class="section-wrapper" id="contact" style="background-color: var(--bg-alt); border-top: 1px solid var(--border-light);">
+      <div class="container">
+        <div class="section-tag">Direct Inquiries</div>
+        <h2 class="section-title">Connect with TECTORA</h2>
+        <p class="section-subtitle">
+          Contact our team to discuss procurement volumes, commercial opportunities, or platform onboarding.
+        </p>
+
+        <div class="contact-split-grid">
+          
+          <!-- Left: Details & Vector Map Card -->
+          <div class="contact-info-panel">
+            <div class="contact-details-list">
+              <div class="contact-detail-block">
+                <h4>Headquarters</h4>
+                <p>Cyber City Corporate Hub, Sector 43</p>
+              </div>
+
+              <div class="contact-detail-block">
+                <h4>Direct Telephone</h4>
+                <p>+91 124 450 8000</p>
+              </div>
+
+              <div class="contact-detail-block">
+                <h4>Inquiries</h4>
+                <p>contact@tectora.com / procurement@tectora.com</p>
+              </div>
+            </div>
+
+            <!-- Minimal Vector Map -->
+            <div class="map-placeholder-box">
+              <svg viewBox="0 0 400 200" fill="none">
+                <rect width="400" height="200" fill="#E8ECEF"/>
+                <path d="M-20 60 L420 60" stroke="#FFFFFF" stroke-width="8"/>
+                <path d="M-20 140 L420 140" stroke="#FFFFFF" stroke-width="12"/>
+                <path d="M120 -20 L120 220" stroke="#FFFFFF" stroke-width="10"/>
+                <path d="M280 -20 L280 220" stroke="#FFFFFF" stroke-width="8"/>
+                <path d="M40 -20 L360 220" stroke="#CBD5E1" stroke-width="4"/>
+                <circle cx="200" cy="100" r="45" fill="rgba(200, 164, 93, 0.2)" stroke="#C8A45D" stroke-width="2"/>
+              </svg>
+              <div class="map-pin-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>TECTORA • Corporate Hub</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Minimal Contact Form (Full Name, Email, Phone, Project Type, Message) -->
+          <div class="contact-form-card">
+            <form id="contactForm" class="contact-form-grid">
+              <div class="contact-row-2">
+                <!-- 1. Full Name -->
+                <div class="inquiry-field">
+                  <label class="inquiry-label" for="cntName">Full Name *</label>
+                  <input type="text" id="cntName" class="inquiry-input" placeholder="Full Name" required />
+                </div>
+                <!-- 2. Email -->
+                <div class="inquiry-field">
+                  <label class="inquiry-label" for="cntEmail">Email *</label>
+                  <input type="email" id="cntEmail" class="inquiry-input" placeholder="name@company.com" required />
+                </div>
+              </div>
+
+              <!-- 3. Phone -->
+              <div class="inquiry-field">
+                <label class="inquiry-label" for="cntPhone">Phone Number</label>
+                <input type="tel" id="cntPhone" class="inquiry-input" placeholder="+91 98100 00000" />
+              </div>
+
+              <!-- 4. Project Type -->
+              <div class="inquiry-field">
+                <label class="inquiry-label" for="cntProjectType">Project Type *</label>
+                <select id="cntProjectType" class="inquiry-select" required>
+                  <option value="" disabled selected>Select Project Type</option>
+                  <option value="commercial">Commercial Development</option>
+                  <option value="infrastructure">Infrastructure & Civil Works</option>
+                  <option value="procurement">Bulk Material Procurement</option>
+                  <option value="contractor">EPC Contracting & Tenders</option>
+                  <option value="engineering">Engineering Consultation</option>
+                </select>
+              </div>
+
+              <!-- 5. Message -->
+              <div class="inquiry-field">
+                <label class="inquiry-label" for="cntMsg">Message *</label>
+                <textarea id="cntMsg" class="inquiry-textarea" placeholder="How can our team assist you?" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full" style="height: 46px;">Send Message</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       7. MINIMAL CLEAN CORPORATE FOOTER
+       ======================================================================== -->
+  <footer class="tectora-footer-light" id="about">
+    <div class="container">
+      <div class="footer-top-row">
+        <!-- Brand summary -->
+        <div>
+          <img src="assets/images/tectora-logo-new.png" alt="TECTORA" style="height: 38px; margin-bottom: 16px;" />
+          <p class="footer-brand-copy">
+            Unified digital platform for smart infrastructure procurement, commercial land development, and engineering execution.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#commercial">Commercial</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Desk -->
+        <div>
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-nav-list">
+            <li><a href="mailto:contact@tectora.com">contact@tectora.com</a></li>
+            <li><a href="tel:+911244508000">+91 124 450 8000</a></li>
+            <li><span style="color: var(--text-secondary); font-size: 0.88rem;">Cyber City Corporate Hub</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Legal bar -->
+      <div class="footer-legal-bar">
+        <div>&copy; 2026 TECTORA Technologies Ltd. All rights reserved.</div>
+        <div>Smart Infrastructure Platform</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div id="globalToast" class="toast-box"></div>
+
+  <!-- Main JavaScript -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

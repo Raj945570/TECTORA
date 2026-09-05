@@ -1,0 +1,584 @@
+/* ==========================================================================
+   TECTORA AUTHENTICATION (Login & Signup)
+   Matches Reference Mockup: 3D Architectural Wall Scene, Right-Floating Card,
+   Playfair Serif Title, Navy + Gold Palette, Google Login & Fluid Responsiveness
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FULL-VIEWPORT ARCHITECTURAL WALL BACKGROUND
+   -------------------------------------------------------------------------- */
+.auth-wall-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+  color: #1E293B;
+
+  /* Architectural Wall Background with 3D Illuminated TECTORA Emblem */
+  background-color: #EFECE6;
+  background-image: url('../assets/images/tectora-wall-login-bg.jpg');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle overlay on smaller screens or narrow aspect ratios for text contrast */
+.auth-wall-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(245, 243, 239, 0) 0%, 
+    rgba(245, 243, 239, 0.05) 50%, 
+    rgba(245, 243, 239, 0.25) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   2. TOP BAR & WATERMARK ("Building Better Spaces | Together —")
+   -------------------------------------------------------------------------- */
+.auth-page-top-bar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: clamp(14px, 2.5vh, 32px) clamp(20px, 4vw, 70px) 0;
+  box-sizing: border-box;
+}
+
+.top-tagline-cluster {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-tagline-text {
+  font-family: var(--font-sans);
+  font-size: clamp(0.72rem, 0.85vw, 0.86rem);
+  font-weight: 500;
+  color: #6C665D;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.top-tagline-dash {
+  display: inline-block;
+  width: clamp(20px, 2.2vw, 32px);
+  height: 2px;
+  background-color: #C8A45D;
+  border-radius: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   3. MAIN CONTENT: RIGHT-ALIGNED FLOATING CARD
+   -------------------------------------------------------------------------- */
+.auth-page-main {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: clamp(16px, 2vh, 36px) clamp(20px, 6vw, 110px);
+  box-sizing: border-box;
+}
+
+/* Floating White Card */
+.auth-card-floating {
+  width: 100%;
+  max-width: clamp(340px, 27vw, 420px);
+  background-color: #FFFFFF;
+  border-radius: clamp(16px, 1.8vw, 24px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 24px 60px -12px rgba(28, 25, 21, 0.20),
+    0 4px 18px rgba(0, 0, 0, 0.04);
+  padding: clamp(22px, 3.2vh, 38px) clamp(20px, 2.4vw, 34px);
+  box-sizing: border-box;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.auth-card-floating:hover {
+  box-shadow: 
+    0 28px 70px -12px rgba(28, 25, 21, 0.24),
+    0 6px 22px rgba(0, 0, 0, 0.06);
+}
+
+/* Signup Card max-width is slightly wider for multi-field ergonomics */
+.auth-card-floating.is-signup {
+  max-width: clamp(360px, 29vw, 440px);
+  padding: clamp(20px, 2.6vh, 34px) clamp(20px, 2.4vw, 34px);
+}
+
+/* --------------------------------------------------------------------------
+   4. CARD HEADER: LOGO, TITLE, SUBTITLE
+   -------------------------------------------------------------------------- */
+.auth-card-header {
+  text-align: center;
+  margin-bottom: clamp(14px, 2vh, 22px);
+}
+
+.auth-card-logo-wrap {
+  display: inline-block;
+  margin-bottom: clamp(8px, 1.2vh, 14px);
+  transition: transform 0.2s ease;
+}
+
+.auth-card-logo-wrap:hover {
+  transform: scale(1.02);
+}
+
+.auth-card-logo {
+  height: clamp(42px, 5.2vh, 54px);
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.auth-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.55rem, 2.1vw, 1.95rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #0B1F3A;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+}
+
+.auth-card-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.82rem, 0.95vw, 0.88rem);
+  color: #64748B;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* --------------------------------------------------------------------------
+   5. FORM & INPUTS
+   -------------------------------------------------------------------------- */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.6vh, 15px);
+}
+
+.auth-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.auth-label {
+  font-size: 0.80rem;
+  font-weight: 600;
+  color: #334155;
+  margin-left: 2px;
+}
+
+/* Visual wrapper for icon + input + toggle */
+.auth-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.auth-field-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748B;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.auth-input {
+  width: 100%;
+  height: clamp(42px, 4.8vh, 46px);
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 9px;
+  padding: 0 14px 0 42px;
+  font-family: var(--font-sans);
+  font-size: clamp(0.86rem, 0.95vw, 0.92rem);
+  color: #1E293B;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.auth-input::placeholder {
+  color: #94A3B8;
+}
+
+.auth-input:hover {
+  border-color: #CBD5E1;
+}
+
+.auth-input:focus {
+  border-color: #C8A45D;
+  box-shadow: 0 0 0 3px rgba(200, 164, 93, 0.16);
+}
+
+.auth-input-wrapper:focus-within .auth-field-icon {
+  color: #0B1F3A;
+}
+
+.auth-input.has-error {
+  border-color: #EF4444 !important;
+  background-color: #FEF2F2 !important;
+}
+
+.auth-error-text {
+  display: none;
+  font-size: 0.74rem;
+  color: #DC2626;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.auth-field-group.has-error .auth-error-text {
+  display: block;
+}
+
+/* Password Toggle Button */
+.auth-password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.auth-password-toggle:hover {
+  color: #0B1F3A;
+}
+
+/* "Forgot Password?" Link Aligned to Right */
+.auth-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -3px;
+  margin-bottom: 2px;
+}
+
+.auth-forgot-link {
+  font-size: clamp(0.78rem, 0.88vw, 0.83rem);
+  font-weight: 600;
+  color: #9A7B38;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.auth-forgot-link:hover {
+  color: #B7934C;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   6. PRIMARY BUTTON (Dark Navy with Hover Glow)
+   -------------------------------------------------------------------------- */
+.btn-auth-primary {
+  width: 100%;
+  height: clamp(44px, 5vh, 48px);
+  background-color: #0B1F3A;
+  color: #FFFFFF;
+  border: 1px solid rgba(200, 164, 93, 0.35);
+  border-radius: 9px;
+  font-family: var(--font-sans);
+  font-size: clamp(0.90rem, 1vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(11, 31, 58, 0.16);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 4px;
+}
+
+.btn-auth-primary:hover {
+  background-color: #071527;
+  border-color: #C8A45D;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(200, 164, 93, 0.35), 0 2px 8px rgba(11, 31, 58, 0.2);
+}
+
+.btn-auth-primary:active {
+  transform: translateY(0);
+}
+
+.btn-auth-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. DIVIDER ("or")
+   -------------------------------------------------------------------------- */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: clamp(4px, 1vh, 8px) 0;
+}
+
+.auth-divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: #E2E8F0;
+}
+
+.auth-divider-text {
+  font-size: 0.76rem;
+  color: #94A3B8;
+  text-transform: lowercase;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   8. GOOGLE SOCIAL LOGIN BUTTON
+   -------------------------------------------------------------------------- */
+.btn-auth-google {
+  width: 100%;
+  height: clamp(42px, 4.8vh, 46px);
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 9px;
+  font-family: var(--font-sans);
+  font-size: clamp(0.86rem, 0.95vw, 0.90rem);
+  font-weight: 600;
+  color: #1E293B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-auth-google:hover {
+  background-color: #F8FAFC;
+  border-color: #CBD5E1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.btn-auth-google:active {
+  background-color: #F1F5F9;
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   9. FOOTER PROMPT (Switch between Login and Signup)
+   -------------------------------------------------------------------------- */
+.auth-footer-prompt {
+  text-align: center;
+  font-size: clamp(0.80rem, 0.9vw, 0.85rem);
+  color: #64748B;
+  margin-top: clamp(12px, 1.8vh, 18px);
+}
+
+.auth-link-accent {
+  color: #C8A45D;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.auth-link-accent:hover {
+  color: #B7934C;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   10. BOTTOM BAR ("— DEVELOP | DESIGN | BUILD | GROW")
+   -------------------------------------------------------------------------- */
+.auth-page-bottom-bar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 clamp(20px, 4vw, 70px) clamp(16px, 2.5vh, 32px);
+  box-sizing: border-box;
+}
+
+.bottom-tagline-cluster {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bottom-tagline-dash {
+  display: inline-block;
+  width: clamp(20px, 2.2vw, 32px);
+  height: 2px;
+  background-color: #C8A45D;
+  border-radius: 1px;
+}
+
+.bottom-tagline-text {
+  font-family: var(--font-sans);
+  font-size: clamp(0.66rem, 0.78vw, 0.76rem);
+  font-weight: 700;
+  color: #6C665D;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   11. RESPONSIVE MEDIA QUERIES & DYNAMIC WINDOW RESIZING
+   Ensures perfect adaptability whether window is small, medium, or large
+   -------------------------------------------------------------------------- */
+
+/* Large Desktop / Wide Screens (>= 1440px) */
+@media (min-width: 1440px) {
+  .auth-page-main {
+    padding-right: clamp(80px, 8vw, 150px);
+  }
+}
+
+/* Medium Desktop / Laptops (1024px to 1366px) */
+@media (max-width: 1366px) {
+  .auth-wall-page {
+    background-position: 15% center;
+  }
+}
+
+/* Tablet Landscape / Medium Screens (860px to 1023px) */
+@media (max-width: 1023px) {
+  .auth-wall-page {
+    background-position: center center;
+  }
+  
+  /* Soft glass scrim so both background 3D sign and card are legible */
+  .auth-wall-page::before {
+    background: rgba(248, 246, 242, 0.55);
+    backdrop-filter: blur(2px);
+  }
+
+  .auth-page-main {
+    justify-content: flex-end;
+    padding-right: clamp(24px, 4vw, 50px);
+  }
+}
+
+/* Mobile & Tablet Portrait (< 860px) */
+@media (max-width: 859px) {
+  .auth-wall-page {
+    background-position: center center;
+  }
+
+  /* Frosted backing for mobile readability */
+  .auth-wall-page::before {
+    background: rgba(248, 246, 242, 0.75);
+    backdrop-filter: blur(5px);
+  }
+
+  .auth-page-top-bar {
+    justify-content: center;
+    padding-top: 18px;
+  }
+
+  .auth-page-main {
+    justify-content: center;
+    align-items: center;
+    padding: 20px 16px;
+  }
+
+  .auth-card-floating {
+    max-width: 410px;
+    box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.16);
+  }
+
+  .auth-page-bottom-bar {
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+}
+
+/* Extra Small Phones (< 480px) */
+@media (max-width: 479px) {
+  .auth-card-floating {
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .auth-card-title {
+    font-size: 1.55rem;
+  }
+
+  .top-tagline-text,
+  .bottom-tagline-text {
+    font-size: 0.68rem;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+/* Short Vertical Viewports (e.g. height < 720px) */
+@media (max-height: 720px) {
+  .auth-wall-page {
+    justify-content: flex-start;
+  }
+
+  .auth-page-top-bar {
+    padding-top: 10px;
+  }
+
+  .auth-card-floating {
+    padding: 18px 20px;
+    margin: 8px 0;
+  }
+
+  .auth-card-header {
+    margin-bottom: 12px;
+  }
+
+  .auth-card-logo {
+    height: 38px;
+  }
+
+  .auth-form {
+    gap: 8px;
+  }
+
+  .auth-page-bottom-bar {
+    padding-bottom: 10px;
+  }
+}

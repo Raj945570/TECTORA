@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materials Marketplace — TECTORA</title>
+  <meta name="description" content="Direct-mill bulk procurement for primary TMT steel rebars, structural concrete, and certified aggregates with transparent index pricing." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/navbar.css" />
+  <link rel="stylesheet" href="styles/sections.css" />
+
+  <!-- Auth Gatekeeper: Requires authentication -->
+  <script src="scripts/auth-guard.js"></script>
+  <script>
+    if (window.TectoraAuth) {
+      window.TectoraAuth.requireAuth();
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="tectora-header" id="tectoraHeader">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo-wrap" aria-label="TECTORA Home">
+        <img src="assets/images/tectora-logo-new.png" alt="TECTORA" class="brand-actual-logo" />
+      </a>
+
+      <nav class="nav-center" id="navCenter" aria-label="Main Navigation">
+        <ul class="nav-links-list">
+          <li class="nav-link-item"><a href="index.html#home" class="nav-link">Home</a></li>
+          <li class="nav-link-item"><a href="index.html#about" class="nav-link">About</a></li>
+          <li class="nav-link-item"><a href="commercial.html" class="nav-link">Commercial</a></li>
+          <li class="nav-link-item"><a href="index.html#services" class="nav-link is-active">Services</a></li>
+          <li class="nav-link-item"><a href="enquiry.html" class="nav-btn-enquiry">Enquiry Now</a></li>
+          <li class="nav-link-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-right">
+        <div class="search-wrapper" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" id="navSearchInput" class="search-input" placeholder="Search platform..." aria-label="Search platform" autocomplete="off" />
+        </div>
+        <a href="login.html" class="nav-auth-link">Sign In</a>
+        <a href="#quote" class="btn-quote" id="btnNavQuote">Get a Quote</a>
+        <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- A. Hero Section (Title + 2 lines max description) -->
+    <section class="service-page-hero">
+      <div class="container">
+        <div class="service-breadcrumb">
+          <a href="index.html">Platform</a> &nbsp;/&nbsp; <span>Materials Marketplace</span>
+        </div>
+        <h1 class="service-hero-title">Materials Marketplace</h1>
+        <p class="service-hero-desc">
+          Direct mill allocations for primary TMT steel rebars, structural concrete, and bulk aggregates backed by transparent index pricing and certified batch testing.
+        </p>
+      </div>
+    </section>
+
+    <!-- B. Details Section (Offerings & Bullet Points) -->
+    <section class="service-details-section">
+      <div class="container">
+        <div class="section-tag">Core Specifications</div>
+        <h2 class="section-title">Institutional Material Supply</h2>
+        <p class="section-subtitle">
+          Eliminate intermediary markups and supply chain bottlenecks with scheduled, batch-tested factory dispatches.
+        </p>
+
+        <!-- Offerings Grid -->
+        <div class="service-offerings-grid">
+          <div class="service-offering-card">
+            <span class="service-offering-num">Spec 01</span>
+            <h3 class="service-offering-title">TMT Steel Rebars</h3>
+            <p class="service-offering-desc">
+              Fe 550D and Fe 600 high-ductility structural rebar direct allocations from primary integrated blast furnaces with NABL test certificates.
+            </p>
+          </div>
+
+          <div class="service-offering-card">
+            <span class="service-offering-num">Spec 02</span>
+            <h3 class="service-offering-title">Ready-Mix Concrete</h3>
+            <p class="service-offering-desc">
+              Custom grade mixes (M25 through M60) batch-produced with computerized telemetry, slump monitoring, and automated pump fleet coordination.
+            </p>
+          </div>
+
+          <div class="service-offering-card">
+            <span class="service-offering-num">Spec 03</span>
+            <h3 class="service-offering-title">Bulk Aggregates & Cement</h3>
+            <p class="service-offering-desc">
+              OPC 43/53 grade cement and washed basalt aggregates sourced under guaranteed volume hedging to lock procurement costs across multi-year phases.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bullet Points of Offerings -->
+        <div class="service-bullets-wrap">
+          <h3 class="service-bullets-title">Key Capabilities & Deliverables</h3>
+          <ul class="service-bullets-list">
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Direct allocation contracts with Tier-1 primary mills</span>
+            </li>
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>NABL-accredited batch test certificates with each consignment</span>
+            </li>
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dynamic volume-based price hedging against raw material volatility</span>
+            </li>
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>GPS-tracked transit telemetry for zero-downtime pouring schedules</span>
+            </li>
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Digital mill invoices integrated with project ERP frameworks</span>
+            </li>
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dedicated materials procurement liaison for on-site delivery management</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- C. CTA Section (Button: "Request a Quote") -->
+    <section class="service-cta-banner" id="quote">
+      <div class="container">
+        <div class="service-cta-inner">
+          <div class="section-tag">Procurement Allocation</div>
+          <h2 class="service-cta-title">Ready to Procure Bulk Materials?</h2>
+          <p class="service-cta-sub">
+            Share your bill of quantities or scheduled delivery dates to receive transparent mill rate allocations.
+          </p>
+          <div class="service-cta-btns">
+            <a href="index.html#contact" class="btn btn-primary" style="height: 48px; padding: 0 32px;">
+              Request a Quote &rarr;
+            </a>
+            <a href="index.html#features" class="btn btn-secondary" style="height: 48px; padding: 0 28px;">
+              Explore All Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal Consistent Footer -->
+  <footer class="tectora-footer-light">
+    <div class="container">
+      <div class="footer-top-row">
+        <div>
+          <img src="assets/images/tectora-logo-new.png" alt="TECTORA" style="height: 38px; margin-bottom: 16px;" />
+          <p class="footer-brand-copy">
+            Unified digital platform for smart infrastructure procurement, commercial land development, and engineering execution.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="commercial.html">Commercial</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-nav-list">
+            <li><a href="mailto:contact@tectora.com">contact@tectora.com</a></li>
+            <li><a href="tel:+911244508000">+91 124 450 8000</a></li>
+            <li><span style="color: var(--text-secondary); font-size: 0.88rem;">Cyber City Corporate Hub</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-legal-bar">
+        <div>&copy; 2026 TECTORA Technologies Ltd. All rights reserved.</div>
+        <div>Materials Marketplace</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
