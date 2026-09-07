@@ -12,11 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/auth.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/auth.css" />
 
   <!-- Auth Gatekeeper: Redirect to homepage if already authenticated -->
-  <script src="scripts/auth-guard.js"></script>
+  <script src="/scripts/auth-guard.js"></script>
   <script>
     if (window.TectoraAuth) {
       window.TectoraAuth.requireGuest();
@@ -39,9 +39,9 @@
       
       <!-- Card Header: Brand Emblem, Playfair Title, Subtitle -->
       <div class="auth-card-header">
-        <a href="index.html" class="auth-card-logo-wrap" aria-label="TECTORA Home">
+        <a href="/index.html" class="auth-card-logo-wrap" aria-label="TECTORA Home">
           <img 
-            src="assets/images/tectora-logo-card.png" 
+            src="/assets/images/tectora-logo-card.png" 
             alt="TECTORA" 
             class="auth-card-logo" 
           />
@@ -145,7 +145,7 @@
       <!-- 7. Prompt: Create Account -->
       <div class="auth-footer-prompt">
         Don’t have an account? 
-        <a href="signup.html" class="auth-link-accent">Create an Account</a>
+        <a href="/pages/auth/signup.html" class="auth-link-accent">Create an Account</a>
       </div>
 
     </div>
@@ -159,6 +159,6 @@
     </div>
   </footer>
 
-  <script src="scripts/auth.js"></script>
+  <script src="/scripts/auth.js"></script>
 </body>
 </html>

@@ -12,12 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/navbar.css" />
-  <link rel="stylesheet" href="styles/enquiry.css?v=3" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
+  <link rel="stylesheet" href="/styles/enquiry.css?v=3" />
 
   <!-- Auth Gatekeeper: Requires authentication -->
-  <script src="scripts/auth-guard.js"></script>
+  <script src="/scripts/auth-guard.js"></script>
   <script>
     if (window.TectoraAuth) {
       window.TectoraAuth.requireAuth();
@@ -33,9 +33,9 @@
     <div class="nav-container">
       
       <!-- Left: Logo -->
-      <a href="index.html" class="brand-logo-wrap" aria-label="TECTORA Home">
+      <a href="/index.html" class="brand-logo-wrap" aria-label="TECTORA Home">
         <img 
-          src="assets/images/tectora-logo-new.png" 
+          src="/assets/images/tectora-logo-new.png" 
           alt="TECTORA" 
           class="brand-actual-logo" 
         />
@@ -44,12 +44,12 @@
       <!-- Center: Menu -->
       <nav class="nav-center" id="navCenter" aria-label="Main Navigation">
         <ul class="nav-links-list">
-          <li class="nav-link-item"><a href="index.html#home" class="nav-link">Home</a></li>
-          <li class="nav-link-item"><a href="index.html#about" class="nav-link">About</a></li>
-          <li class="nav-link-item"><a href="commercial.html" class="nav-link">Commercial</a></li>
-          <li class="nav-link-item"><a href="index.html#services" class="nav-link">Services</a></li>
-          <li class="nav-link-item"><a href="enquiry.html" class="nav-btn-enquiry is-active">Enquiry Now</a></li>
-          <li class="nav-link-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li class="nav-link-item"><a href="/index.html#home" class="nav-link">Home</a></li>
+          <li class="nav-link-item"><a href="/index.html#about" class="nav-link">About</a></li>
+          <li class="nav-link-item"><a href="/pages/services/commercial.html" class="nav-link">Commercial</a></li>
+          <li class="nav-link-item"><a href="/index.html#services" class="nav-link">Services</a></li>
+          <li class="nav-link-item"><a href="/pages/enquiry/enquiry.html" class="nav-btn-enquiry is-active">Enquiry Now</a></li>
+          <li class="nav-link-item"><a href="/index.html#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
@@ -70,7 +70,7 @@
           />
         </div>
 
-        <a href="login.html" class="nav-auth-link">
+        <a href="/pages/auth/login.html" class="nav-auth-link">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;" aria-hidden="true">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
@@ -78,7 +78,7 @@
           Sign In
         </a>
 
-        <a href="index.html#contact" class="btn-quote" id="btnNavQuote">
+        <a href="/index.html#contact" class="btn-quote" id="btnNavQuote">
           Get a Quote
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px;" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -347,8 +347,8 @@
   </main>
 
   <!-- Scripts -->
-  <script src="scripts/navbar.js"></script>
-  <script src="scripts/enquiry.js"></script>
+  <script src="/scripts/navbar.js"></script>
+  <script src="/scripts/enquiry.js"></script>
 
 </body>
 </html>

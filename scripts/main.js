@@ -70,22 +70,22 @@ function initNavbar() {
    -------------------------------------------------------------------------- */
 const showcaseImages = [
   {
-    src: 'assets/images/property-living.jpg',
+    src: '/assets/images/property-living.jpg',
     title: 'Cyber City Commercial Hub — Executive Floor',
     pill: 'Executive Floor'
   },
   {
-    src: 'assets/images/property-kitchen.jpg',
+    src: '/assets/images/property-kitchen.jpg',
     title: 'Cafeteria & Collaborative Lounge',
     pill: 'Lounge Area'
   },
   {
-    src: 'assets/images/property-structural.jpg',
+    src: '/assets/images/property-structural.jpg',
     title: 'Grade-A RCC Monolithic Shear Shell',
     pill: 'Structural Shell'
   },
   {
-    src: 'assets/images/property-land.jpg',
+    src: '/assets/images/property-land.jpg',
     title: 'Financial District Masterplan Development Parcel',
     pill: 'Masterplan Site'
   }

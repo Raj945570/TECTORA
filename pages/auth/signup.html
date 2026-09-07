@@ -12,11 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/auth.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/auth.css?v=2" />
 
   <!-- Auth Gatekeeper: Redirect to homepage if already authenticated -->
-  <script src="scripts/auth-guard.js"></script>
+  <script src="/scripts/auth-guard.js"></script>
   <script>
     if (window.TectoraAuth) {
       window.TectoraAuth.requireGuest();
@@ -39,9 +39,9 @@
       
       <!-- Card Header: Brand Emblem, Playfair Title, Subtitle -->
       <div class="auth-card-header">
-        <a href="index.html" class="auth-card-logo-wrap" aria-label="TECTORA Home">
+        <a href="/index.html" class="auth-card-logo-wrap" aria-label="TECTORA Home">
           <img 
-            src="assets/images/tectora-logo-card.png" 
+            src="/assets/images/tectora-logo-card.png" 
             alt="TECTORA" 
             class="auth-card-logo" 
           />
@@ -50,8 +50,95 @@
         <p class="auth-card-subtitle">Join the unified digital infrastructure platform</p>
       </div>
 
-      <!-- Signup Form (Full Name, Email, Phone, Password, Confirm Password) -->
+      <!-- Signup Form (Role, Full Name, Email, Phone, Password, Confirm Password) -->
       <form id="signupForm" class="auth-form" novalidate>
+
+        <!-- Role Selection: Client / Seller / Consultant -->
+        <div class="auth-role-section">
+          <label class="auth-role-label" id="roleSelectionLabel">
+            I am a <span class="auth-required-star">*</span>
+          </label>
+          <div class="auth-role-grid" role="radiogroup" aria-labelledby="roleSelectionLabel">
+            
+            <!-- Option 1: Client (Selected by default) -->
+            <button 
+              type="button" 
+              class="auth-role-card is-selected" 
+              data-role="client"
+              role="radio"
+              aria-checked="true"
+              tabindex="0"
+            >
+              <span class="role-check-badge" aria-hidden="true">
+                <svg viewBox="0 0 12 12" width="8" height="8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="2.5 6 4.8 8.5 9.5 3.5"></polyline>
+                </svg>
+              </span>
+              <span class="role-icon-wrap" aria-hidden="true">
+                <svg class="role-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </span>
+              <span class="role-card-title">Client</span>
+              <span class="role-card-desc">Looking for materials, land, or services</span>
+            </button>
+
+            <!-- Option 2: Seller -->
+            <button 
+              type="button" 
+              class="auth-role-card" 
+              data-role="seller"
+              role="radio"
+              aria-checked="false"
+              tabindex="-1"
+            >
+              <span class="role-check-badge" aria-hidden="true">
+                <svg viewBox="0 0 12 12" width="8" height="8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="2.5 6 4.8 8.5 9.5 3.5"></polyline>
+                </svg>
+              </span>
+              <span class="role-icon-wrap" aria-hidden="true">
+                <svg class="role-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l1.5-5h15L21 9"></path>
+                  <path d="M3 9a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 3 0"></path>
+                  <path d="M4 11.5V20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8.5"></path>
+                  <path d="M9 21v-6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6"></path>
+                </svg>
+              </span>
+              <span class="role-card-title">Seller</span>
+              <span class="role-card-desc">Supply materials, land, or services</span>
+            </button>
+
+            <!-- Option 3: Consultant -->
+            <button 
+              type="button" 
+              class="auth-role-card" 
+              data-role="consultant"
+              role="radio"
+              aria-checked="false"
+              tabindex="-1"
+            >
+              <span class="role-check-badge" aria-hidden="true">
+                <svg viewBox="0 0 12 12" width="8" height="8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="2.5 6 4.8 8.5 9.5 3.5"></polyline>
+                </svg>
+              </span>
+              <span class="role-icon-wrap" aria-hidden="true">
+                <svg class="role-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1z"></path>
+                  <path d="M10 11V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v6"></path>
+                  <path d="M4 16v-2.5a8 8 0 0 1 16 0V16"></path>
+                </svg>
+              </span>
+              <span class="role-card-title">Consultant</span>
+              <span class="role-card-desc">Offer expertise and consultancy</span>
+            </button>
+
+          </div>
+          <!-- Hidden input storing active role value -->
+          <input type="hidden" name="role" id="signupRole" value="client" />
+        </div>
         
         <!-- 1. Full Name -->
         <div class="auth-field-group" id="groupSignupName">
@@ -67,7 +154,7 @@
               id="signupName" 
               name="fullName" 
               class="auth-input" 
-              placeholder="Full Name" 
+              placeholder="Full Name *" 
               required 
               autocomplete="name" 
             />
@@ -89,7 +176,7 @@
               id="signupEmail" 
               name="email" 
               class="auth-input" 
-              placeholder="Email Address" 
+              placeholder="Email Address *" 
               required 
               autocomplete="email" 
             />
@@ -110,7 +197,7 @@
               id="signupPhone" 
               name="phone" 
               class="auth-input" 
-              placeholder="Phone Number" 
+              placeholder="Phone Number *" 
               required 
               autocomplete="tel" 
             />
@@ -205,11 +292,11 @@
       <!-- 9. Footer Prompt: Sign In -->
       <div class="auth-footer-prompt">
         Already have an account? 
-        <a href="login.html" class="auth-link-accent">Sign In</a>
+        <a href="/pages/auth/login.html" class="auth-link-accent">Sign In</a>
       </div>
 
-    </div>
-  </main>
+    </div><!-- /.auth-card-floating -->
+  </main><!-- /.auth-page-main -->
 
   <!-- Bottom Bar / Tagline ("— DEVELOP | DESIGN | BUILD | GROW") -->
   <footer class="auth-page-bottom-bar" aria-label="Page Footer">
@@ -219,6 +306,6 @@
     </div>
   </footer>
 
-  <script src="scripts/auth.js"></script>
+  <script src="/scripts/auth.js"></script>
 </body>
 </html>

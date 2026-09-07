@@ -25,16 +25,16 @@
 
     requireAuth: function () {
       if (!this.isAuthenticated()) {
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-        const redirectParam = encodeURIComponent(currentPath + window.location.search + window.location.hash);
-        window.location.replace('login.html?redirect=' + redirectParam);
+        const currentPath = window.location.pathname + window.location.search + window.location.hash;
+        const redirectParam = encodeURIComponent(currentPath);
+        window.location.replace('/pages/auth/login.html?redirect=' + redirectParam);
       }
     },
 
     requireGuest: function () {
       if (this.isAuthenticated()) {
         const params = new URLSearchParams(window.location.search);
-        const destination = params.get('redirect') || 'index.html';
+        const destination = params.get('redirect') || '/index.html';
         window.location.replace(destination);
       }
     },
@@ -49,7 +49,7 @@
     signOut: function () {
       localStorage.removeItem(AUTH_KEY);
       localStorage.removeItem(USER_KEY);
-      window.location.replace('login.html');
+      window.location.replace('/pages/auth/login.html');
     }
   };
 

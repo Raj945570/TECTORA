@@ -7,6 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initLoginFlow();
   initSignupFlow();
+  initRoleSelector();
   initPasswordToggles();
   initSocialAndHelpers();
 });
@@ -109,7 +110,7 @@ function initLoginFlow() {
 
     // Redirect to requested page or index.html
     const params = new URLSearchParams(window.location.search);
-    const destination = params.get('redirect') || 'index.html';
+    const destination = params.get('redirect') || '/index.html';
 
     setTimeout(() => {
       window.location.replace(destination);
@@ -212,13 +213,20 @@ function initSignupFlow() {
     submitBtn.innerHTML = '<span>Creating Account...</span>';
     submitBtn.disabled = true;
 
+    // Read selected role
+    const roleInput = document.getElementById('signupRole');
+    const selectedRole = roleInput ? roleInput.value : 'client';
+
     // Establish authenticated session
     const userData = {
       name: nameVal,
       email: emailVal,
       phone: phoneVal,
+      role: selectedRole,
       registeredAt: new Date().toISOString()
     };
+
+    localStorage.setItem('tectora_user_role', selectedRole);
 
     if (window.TectoraAuth) {
       window.TectoraAuth.setAuthenticated(userData);
@@ -228,7 +236,7 @@ function initSignupFlow() {
     }
 
     setTimeout(() => {
-      window.location.replace('index.html');
+      window.location.replace('/index.html');
     }, 550);
   });
 
@@ -241,6 +249,56 @@ function initSignupFlow() {
         if (grp) grp.classList.remove('has-error');
       });
     }
+  });
+}
+
+// 3.1 Role Selector Controller (Client, Seller, Consultant)
+function initRoleSelector() {
+  const roleCards = document.querySelectorAll('.auth-role-card');
+  const roleInput = document.getElementById('signupRole');
+  if (!roleCards.length || !roleInput) return;
+
+  const selectRole = (targetCard) => {
+    const role = targetCard.getAttribute('data-role');
+    if (!role) return;
+
+    roleCards.forEach(card => {
+      const isCurrent = card === targetCard;
+      card.classList.toggle('is-selected', isCurrent);
+      card.setAttribute('aria-checked', isCurrent ? 'true' : 'false');
+      card.setAttribute('tabindex', isCurrent ? '0' : '-1');
+    });
+
+    roleInput.value = role;
+  };
+
+  roleCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      selectRole(card);
+    });
+
+    // Keyboard accessibility: Space, Enter, Arrow navigation
+    card.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        selectRole(card);
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        const next = card.nextElementSibling || roleCards[0];
+        if (next && next.classList.contains('auth-role-card')) {
+          selectRole(next);
+          next.focus();
+        }
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prev = card.previousElementSibling || roleCards[roleCards.length - 1];
+        if (prev && prev.classList.contains('auth-role-card')) {
+          selectRole(prev);
+          prev.focus();
+        }
+      }
+    });
   });
 }
 
@@ -257,6 +315,7 @@ function initSocialAndHelpers() {
       const googleUserData = {
         name: 'Enterprise Director',
         email: 'director@enterprise.com',
+        role: 'director',
         provider: 'Google SSO',
         loggedInAt: new Date().toISOString()
       };
@@ -269,7 +328,7 @@ function initSocialAndHelpers() {
       }
 
       const params = new URLSearchParams(window.location.search);
-      const destination = params.get('redirect') || 'index.html';
+      const destination = params.get('redirect') || '/index.html';
       setTimeout(() => {
         window.location.replace(destination);
       }, 500);
@@ -284,12 +343,18 @@ function initSocialAndHelpers() {
       googleSignupBtn.innerHTML = '<span>Connecting to Google...</span>';
       googleSignupBtn.disabled = true;
 
+      const roleInput = document.getElementById('signupRole');
+      const selectedRole = roleInput ? roleInput.value : 'client';
+
       const googleUserData = {
         name: 'Enterprise Partner',
         email: 'partner@enterprise.com',
+        role: selectedRole,
         provider: 'Google SSO',
         registeredAt: new Date().toISOString()
       };
+
+      localStorage.setItem('tectora_user_role', selectedRole);
 
       if (window.TectoraAuth) {
         window.TectoraAuth.setAuthenticated(googleUserData);
@@ -299,7 +364,7 @@ function initSocialAndHelpers() {
       }
 
       setTimeout(() => {
-        window.location.replace('index.html');
+        window.location.replace('/index.html');
       }, 500);
     });
   }

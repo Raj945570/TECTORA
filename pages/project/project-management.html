@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contractors & Consultants — TECTORA</title>
-  <meta name="description" content="Audited Grade-A EPC contractors, MEP engineering specialists, and structural consultants with verified execution records." />
+  <title>Project Management Suite — TECTORA</title>
+  <meta name="description" content="Milestone tracking, automated material dispatch tracking, and third-party technical quality inspections." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/navbar.css" />
-  <link rel="stylesheet" href="styles/sections.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
+  <link rel="stylesheet" href="/styles/sections.css" />
 
   <!-- Auth Gatekeeper: Requires authentication -->
-  <script src="scripts/auth-guard.js"></script>
+  <script src="/scripts/auth-guard.js"></script>
   <script>
     if (window.TectoraAuth) {
       window.TectoraAuth.requireAuth();
@@ -27,18 +27,18 @@
   <!-- Header / Navigation -->
   <header class="tectora-header" id="tectoraHeader">
     <div class="nav-container">
-      <a href="index.html" class="brand-logo-wrap" aria-label="TECTORA Home">
-        <img src="assets/images/tectora-logo-new.png" alt="TECTORA" class="brand-actual-logo" />
+      <a href="/index.html" class="brand-logo-wrap" aria-label="TECTORA Home">
+        <img src="/assets/images/tectora-logo-new.png" alt="TECTORA" class="brand-actual-logo" />
       </a>
 
       <nav class="nav-center" id="navCenter" aria-label="Main Navigation">
         <ul class="nav-links-list">
-          <li class="nav-link-item"><a href="index.html#home" class="nav-link">Home</a></li>
-          <li class="nav-link-item"><a href="index.html#about" class="nav-link">About</a></li>
-          <li class="nav-link-item"><a href="commercial.html" class="nav-link">Commercial</a></li>
-          <li class="nav-link-item"><a href="index.html#services" class="nav-link is-active">Services</a></li>
-          <li class="nav-link-item"><a href="enquiry.html" class="nav-btn-enquiry">Enquiry Now</a></li>
-          <li class="nav-link-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li class="nav-link-item"><a href="/index.html#home" class="nav-link">Home</a></li>
+          <li class="nav-link-item"><a href="/index.html#about" class="nav-link">About</a></li>
+          <li class="nav-link-item"><a href="/pages/services/commercial.html" class="nav-link">Commercial</a></li>
+          <li class="nav-link-item"><a href="/index.html#services" class="nav-link is-active">Services</a></li>
+          <li class="nav-link-item"><a href="/pages/enquiry/enquiry.html" class="nav-btn-enquiry">Enquiry Now</a></li>
+          <li class="nav-link-item"><a href="/index.html#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
@@ -50,7 +50,7 @@
           </svg>
           <input type="search" id="navSearchInput" class="search-input" placeholder="Search platform..." aria-label="Search platform" autocomplete="off" />
         </div>
-        <a href="login.html" class="nav-auth-link">Sign In</a>
+        <a href="/pages/auth/login.html" class="nav-auth-link">Sign In</a>
         <a href="#quote" class="btn-quote" id="btnNavQuote">Get a Quote</a>
         <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -64,11 +64,11 @@
     <section class="service-page-hero">
       <div class="container">
         <div class="service-breadcrumb">
-          <a href="index.html">Platform</a> &nbsp;/&nbsp; <span>Contractors & Consultants</span>
+          <a href="/index.html">Platform</a> &nbsp;/&nbsp; <span>Project Management</span>
         </div>
-        <h1 class="service-hero-title">Contractors & Consultants</h1>
+        <h1 class="service-hero-title">Project Management</h1>
         <p class="service-hero-desc">
-          Audited Grade-A EPC contractors, MEP engineering specialists, and structural consultants with verified execution records and certified quality compliance.
+          Milestone-driven telemetry, automated material dispatch tracking, and third-party technical quality inspections to guarantee on-time structural execution.
         </p>
       </div>
     </section>
@@ -76,66 +76,66 @@
     <!-- B. Details Section (Offerings & Bullet Points) -->
     <section class="service-details-section">
       <div class="container">
-        <div class="section-tag">Partner Network</div>
-        <h2 class="section-title">Institutional Engineering Execution</h2>
+        <div class="section-tag">Platform Telemetry</div>
+        <h2 class="section-title">Digital Execution Governance</h2>
         <p class="section-subtitle">
-          Connect with pre-screened civil contractors and specialized consultants adhering to zero-defect execution standards.
+          Eliminate site delays, material inventory loss, and communication silos with a single unified telemetry dashboard.
         </p>
 
         <!-- Offerings Grid -->
         <div class="service-offerings-grid">
           <div class="service-offering-card">
-            <span class="service-offering-num">Partner 01</span>
-            <h3 class="service-offering-title">General & EPC Contractors</h3>
+            <span class="service-offering-num">Module 01</span>
+            <h3 class="service-offering-title">Milestone & Schedule Tracking</h3>
             <p class="service-offering-desc">
-              Class-A civil builders equipped for monolithic shear-wall, pre-stressed slab, and deep-foundation engineering across high-rise and infra assets.
+              Gantt-integrated site progress tracking linking civil, structural, and finishing work packages with critical-path delay alerts.
             </p>
           </div>
 
           <div class="service-offering-card">
-            <span class="service-offering-num">Partner 02</span>
-            <h3 class="service-offering-title">MEP & HVAC Specialists</h3>
+            <span class="service-offering-num">Module 02</span>
+            <h3 class="service-offering-title">Material Dispatch Telemetry</h3>
             <p class="service-offering-desc">
-              Integrated mechanical, electrical, and plumbing engineering contractors ensuring ASHRAE compliance, high-efficiency chillers, and smart building automation.
+              Real-time transit visibility from mill weighbridge to on-site rebar yard with automated digital delivery receipts and inventory consumption logs.
             </p>
           </div>
 
           <div class="service-offering-card">
-            <span class="service-offering-num">Partner 03</span>
-            <h3 class="service-offering-title">Structural & BIM Consultants</h3>
+            <span class="service-offering-num">Module 03</span>
+            <h3 class="service-offering-title">Quality & Audit Governance</h3>
             <p class="service-offering-desc">
-              Chartered civil engineers providing Seismic Zone V structural modeling, peer-review certification, and full LOD 400 BIM coordination models.
+              Automated upload of cube test results, rebar tensile certificates, and third-party structural audit approvals before progress billings.
             </p>
           </div>
         </div>
 
         <!-- Bullet Points of Offerings -->
         <div class="service-bullets-wrap">
-          <h3 class="service-bullets-title">Auditing & Engagement Standards</h3>
+          <h3 class="service-bullets-title">Operational Features & Platform Controls</h3>
           <ul class="service-bullets-list">
             <li class="service-bullet-item">
               <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Multi-tier financial liquidity and working capital audit</span>
+              <span>Automated progress escrow milestones tied to structural sign-offs</span>
             </li>
             <li class="service-bullet-item">
               <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Audited safety track record with zero-fatality verification standards</span>
+              <span>Unified dashboard for developers, general contractors, and PMCs</span>
             </li>
             <li class="service-bullet-item">
               <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Standardized FIDIC & institutional contract templates</span>
+              <span>Predictive material inventory burn-rate alerts to prevent stockouts</span>
             </li>
             <li class="service-bullet-item">
               <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Automated RFQ bidding and comparative tender evaluation matrices</span>
+              <span>Mobile site inspection app with geo-tagged photographic punch lists</span>
             </li>
             <li class="service-bullet-item">
               <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Third-party milestone sign-offs prior to escrow stage releases</span>
+              <span>Daily digital labor and machinery deployment logs</span>
             </li>
             <li class="service-bullet-item">
               <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Green building, LEED, and GRIHA certification advisory</span>
+              <span>Seamless export into Primavera P6, Microsoft Project, and ERP systems</span>
             </li>
           </ul>
         </div>
@@ -146,16 +146,16 @@
     <section class="service-cta-banner" id="quote">
       <div class="container">
         <div class="service-cta-inner">
-          <div class="section-tag">Tender Allocation</div>
-          <h2 class="service-cta-title">Engage Vetted EPC & Engineering Partners</h2>
+          <div class="section-tag">Enterprise Deployment</div>
+          <h2 class="service-cta-title">Deploy Project Management Telemetry</h2>
           <p class="service-cta-sub">
-            Post your project scope or tender requirements to receive audited contractor submissions within 7 business days.
+            Schedule an executive platform demonstration or request project onboarding terms for your active developments.
           </p>
           <div class="service-cta-btns">
-            <a href="index.html#contact" class="btn btn-primary" style="height: 48px; padding: 0 32px;">
+            <a href="/index.html#contact" class="btn btn-primary" style="height: 48px; padding: 0 32px;">
               Request a Quote &rarr;
             </a>
-            <a href="index.html#features" class="btn btn-secondary" style="height: 48px; padding: 0 28px;">
+            <a href="/index.html#features" class="btn btn-secondary" style="height: 48px; padding: 0 28px;">
               Explore All Services
             </a>
           </div>
@@ -169,7 +169,7 @@
     <div class="container">
       <div class="footer-top-row">
         <div>
-          <img src="assets/images/tectora-logo-new.png" alt="TECTORA" style="height: 38px; margin-bottom: 16px;" />
+          <img src="/assets/images/tectora-logo-new.png" alt="TECTORA" style="height: 38px; margin-bottom: 16px;" />
           <p class="footer-brand-copy">
             Unified digital platform for smart infrastructure procurement, commercial land development, and engineering execution.
           </p>
@@ -178,11 +178,11 @@
         <div>
           <h4 class="footer-heading">Navigation</h4>
           <ul class="footer-nav-list">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="commercial.html">Commercial</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#about">About</a></li>
+            <li><a href="/pages/services/commercial.html">Commercial</a></li>
+            <li><a href="/index.html#services">Services</a></li>
+            <li><a href="/index.html#contact">Contact</a></li>
           </ul>
         </div>
 
@@ -198,11 +198,11 @@
 
       <div class="footer-legal-bar">
         <div>&copy; 2026 TECTORA Technologies Ltd. All rights reserved.</div>
-        <div>Contractors & Engineering</div>
+        <div>Project Management</div>
       </div>
     </div>
   </footer>
 
-  <script src="scripts/main.js"></script>
+  <script src="/scripts/main.js"></script>
 </body>
 </html>
