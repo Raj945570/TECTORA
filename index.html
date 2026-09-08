@@ -40,17 +40,13 @@
           alt="TECTORA" 
           class="brand-actual-logo" 
         />
-      </a>
-
-      <!-- Center: Menu (Home, About, Commercial, Services, Contact) -->
+      </a>      <!-- Center: Menu (Home, About, Commercial, Services) matching reference image -->
       <nav class="nav-center" id="navCenter" aria-label="Main Navigation">
         <ul class="nav-links-list">
           <li class="nav-link-item"><a href="#home" class="nav-link is-active">Home</a></li>
           <li class="nav-link-item"><a href="#about" class="nav-link">About</a></li>
           <li class="nav-link-item"><a href="/pages/services/commercial.html" class="nav-link">Commercial</a></li>
           <li class="nav-link-item"><a href="#services" class="nav-link">Services</a></li>
-          <li class="nav-link-item"><a href="/pages/enquiry/enquiry.html" class="nav-btn-enquiry">Enquiry Now</a></li>
-          <li class="nav-link-item"><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
@@ -64,7 +60,7 @@
           </svg>
           <input 
             type="search" 
-            id="navSearchInput"
+            id="navSearchInput" 
             class="search-input" 
             placeholder="Search platform..." 
             aria-label="Search platform"
@@ -75,8 +71,8 @@
         <!-- Auth Link -->
         <a href="/pages/auth/login.html" class="nav-auth-link">Sign In</a>
 
-        <!-- Button: "Get a Quote" -->
-        <a href="#contact" class="btn-quote" id="btnNavQuote">Get a Quote</a>
+        <!-- Button: "Enquiry Now" matching reference image -->
+        <a href="/pages/enquiry/enquiry.html" class="btn-quote" id="btnNavQuote">Enquiry Now</a>
 
         <!-- Mobile Drawer Toggle -->
         <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -108,26 +104,23 @@
 
             <!-- Requested Headline -->
             <h1 class="hero-heading-main">
-              Smart Infrastructure Procurement
+              Everything You Need<br />to Build — In One Place
             </h1>
 
             <!-- Requested Subtext -->
             <p class="hero-subtext-main">
-              Connecting developers, contractors, and suppliers through a unified digital platform.
+              Materials, land, experts, and execution — seamlessly connected<br class="hero-sub-br" />through a unified digital infrastructure platform.
             </p>
 
-            <!-- Action Buttons -->
+            <!-- Single Primary CTA Button -->
             <div class="hero-actions-row">
-              <a href="/pages/enquiry/enquiry.html" class="hero-btn-primary" id="btnHeroStartProject">
-                <span>Start Your Project</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="#contact" class="hero-btn-secondary" id="btnHeroGetQuote">
-                <span>Get a Quote</span>
+              <a href="/pages/enquiry/enquiry.html" class="hero-btn-primary" id="btnHeroEnquiry">
+                <span>Enquiry Now</span>
+                <span class="btn-arrow" aria-hidden="true">&rarr;</span>
               </a>
             </div>
 
-            <!-- Platform Highlights Row (Replaces auto-loaded inquiry form) -->
+            <!-- Platform Highlights Row -->
             <div class="hero-highlights-row">
               <div class="hero-highlight-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -135,6 +128,7 @@
                 </svg>
                 <span>Verified Suppliers &amp; Materials</span>
               </div>
+              <span class="hero-highlight-divider" aria-hidden="true"></span>
               <div class="hero-highlight-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="4" y="2" width="16" height="20" rx="2"></rect>
@@ -145,9 +139,10 @@
                 </svg>
                 <span>Institutional Developers</span>
               </div>
+              <span class="hero-highlight-divider" aria-hidden="true"></span>
               <div class="hero-highlight-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline>
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                 </svg>
                 <span>Turnkey EPC Execution</span>
               </div>
@@ -166,9 +161,9 @@
     <section class="section-wrapper tools-resource-section" id="offerings">
       <!-- Background curved shapes matching reference design -->
       <svg class="tools-bg-shapes" aria-hidden="true" viewBox="0 0 1600 700" fill="none" preserveAspectRatio="none">
-        <path d="M780 -60 C980 140, 1220 360, 1680 190" stroke="rgba(255, 212, 57, 0.22)" stroke-width="85" stroke-linecap="round" />
-        <path d="M1020 -100 C1240 160, 1380 430, 1720 310" stroke="rgba(200, 164, 93, 0.10)" stroke-width="130" stroke-linecap="round" />
-        <circle cx="1380" cy="200" r="280" fill="rgba(255, 212, 57, 0.05)" filter="blur(60px)" />
+        <path d="M750 -40 C980 120, 1240 340, 1650 200 L1650 -40 Z" fill="rgba(245, 230, 190, 0.35)" />
+        <path d="M860 -60 C1080 140, 1340 380, 1680 260" stroke="rgba(243, 215, 150, 0.50)" stroke-width="60" stroke-linecap="round" />
+        <path d="M1020 -80 C1220 160, 1420 420, 1720 320" stroke="rgba(245, 225, 170, 0.35)" stroke-width="90" stroke-linecap="round" />
       </svg>
 
       <div class="container" style="position: relative; z-index: 2;">
@@ -266,8 +261,8 @@
             </div>
           </a>
 
-          <!-- Card 3: Contractors & Consultants -->
-          <a href="/pages/services/contractors.html" class="ultratech-card" id="cardOfferingContractors" aria-label="Explore Contractors & Consultants">
+          <!-- Card 3: Experts & Consultants -->
+          <a href="/pages/services/contractors.html" class="ultratech-card" id="cardOfferingExperts" aria-label="Explore Experts &amp; Consultants">
             <div class="ultratech-card-top">
               <div class="ultratech-icon-wrapper">
                 <svg class="ultratech-icon-svg" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -288,9 +283,9 @@
                   <path d="M28 15V12.5" stroke="#1E293B" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3 class="ultratech-card-title">Contractors &amp; Consultants</h3>
+              <h3 class="ultratech-card-title">Experts &amp;<br />Consultants</h3>
               <p class="ultratech-card-desc">
-                Connect with trusted contractors, consultants and service providers.
+                Connect with trusted experts, consultants and service providers.
               </p>
             </div>
             <div class="ultratech-card-bottom">
@@ -356,7 +351,7 @@
                   <path d="M23 37C21 40 18 41 15 41" stroke="#1E293B" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3 class="ultratech-card-title">Eco Friendly Solutions</h3>
+              <h3 class="ultratech-card-title">Eco Friendly<br />Solutions</h3>
               <p class="ultratech-card-desc">
                 Explore sustainable and eco-friendly construction alternatives.
               </p>
@@ -651,7 +646,7 @@
           <ul class="footer-nav-list">
             <li><a href="/pages/services/materials.html">Raw Materials</a></li>
             <li><a href="/pages/services/commercial.html">Commercial Land</a></li>
-            <li><a href="/pages/services/contractors.html">Contractors &amp; Consultants</a></li>
+            <li><a href="/pages/services/contractors.html">Experts &amp; Consultants</a></li>
             <li><a href="/pages/services/interior.html">Interior Designers</a></li>
             <li><a href="/pages/services/eco.html">Eco Friendly Solutions</a></li>
           </ul>

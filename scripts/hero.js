@@ -30,10 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (toggleImageBtn) {
     toggleImageBtn.addEventListener('click', () => {
       if (currentImage === 'skyline') {
+        heroSection.style.setProperty('--hero-bg', "url('assets/images/hero-construction.jpg')");
         heroSection.style.backgroundImage = "url('assets/images/hero-construction.jpg')";
         currentImage = 'construction';
         imageBtnText.textContent = 'View Skyline';
       } else {
+        heroSection.style.setProperty('--hero-bg', "url('assets/images/hero-skyline.jpg')");
         heroSection.style.backgroundImage = "url('assets/images/hero-skyline.jpg')";
         currentImage = 'skyline';
         imageBtnText.textContent = 'View Construction Site';
