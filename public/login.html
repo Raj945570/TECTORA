@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — TECTORA Smart Infrastructure Platform</title>
+  <meta name="description" content="Sign in to your TECTORA account to access infrastructure procurement, commercial land, and engineering execution." />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/auth.css" />
+
+  <!-- Auth Gatekeeper: Redirect to homepage if already authenticated -->
+  <script src="/scripts/auth-guard.js"></script>
+  <script>
+    if (window.TectoraAuth) {
+      window.TectoraAuth.requireGuest();
+    }
+  </script>
+<body class="auth-page-body">
+  <section class="auth-wall-page">
+
+  <!-- Top Bar / Watermark ("Building Better Spaces | Together —") -->
+  <header class="auth-page-top-bar" aria-label="Page Header">
+    <div class="top-tagline-cluster">
+      <span class="top-tagline-text">Building Better Spaces &nbsp;|&nbsp; Together</span>
+      <span class="top-tagline-dash" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <!-- Main Viewport: Right-Floating Login Card -->
+  <main class="auth-page-main">
+    <div class="auth-card-floating">
+      
+      <!-- Card Header: Brand Emblem, Playfair Title, Subtitle -->
+      <div class="auth-card-header">
+        <a href="/index.html" class="auth-card-logo-wrap" aria-label="TECTORA Home">
+          <img 
+            src="/assets/images/tectora-logo-card.png" 
+            alt="TECTORA" 
+            class="auth-card-logo" 
+          />
+        </a>
+        <h1 class="auth-card-title">Welcome Back</h1>
+        <p class="auth-card-subtitle">Access your TECTORA dashboard</p>
+      </div>
+
+      <!-- Login Form (Email/Phone + Password) -->
+      <form id="loginForm" class="auth-form" novalidate>
+        
+        <!-- 1. Email or Phone -->
+        <div class="auth-field-group" id="groupLoginEmail">
+          <div class="auth-input-wrapper">
+            <span class="auth-field-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </span>
+            <input 
+              type="text" 
+              id="loginEmail" 
+              name="email" 
+              class="auth-input" 
+              placeholder="Email or Phone" 
+              required 
+              autocomplete="username" 
+            />
+          </div>
+          <div class="auth-error-text" id="errLoginEmail">Please enter a valid email or phone number.</div>
+        </div>
+
+        <!-- 2. Password -->
+        <div class="auth-field-group" id="groupLoginPassword">
+          <div class="auth-input-wrapper">
+            <span class="auth-field-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input 
+              type="password" 
+              id="loginPassword" 
+              name="password" 
+              class="auth-input" 
+              placeholder="Password" 
+              required 
+              autocomplete="current-password" 
+            />
+            <button 
+              type="button" 
+              class="auth-password-toggle" 
+              id="btnToggleLoginPassword" 
+              aria-label="Toggle password visibility"
+            >
+              <svg class="eye-icon eye-open" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <svg class="eye-icon eye-closed" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+              </svg>
+            </button>
+          </div>
+          <div class="auth-error-text" id="errLoginPassword">Password is required.</div>
+        </div>
+
+        <!-- 3. Forgot Password Link (Aligned Right) -->
+        <div class="auth-forgot-row">
+          <a href="#" class="auth-forgot-link" id="linkForgotPassword">Forgot Password?</a>
+        </div>
+
+        <!-- 4. Login Button -->
+        <button type="submit" class="btn-auth-primary" id="btnLoginSubmit">
+          <span>Login &rarr;</span>
+        </button>
+
+        <!-- 5. Divider ("or") -->
+        <div class="auth-divider" aria-hidden="true">
+          <span class="auth-divider-line"></span>
+          <span class="auth-divider-text">or</span>
+          <span class="auth-divider-line"></span>
+        </div>
+
+        <!-- 6. Google Login Button -->
+        <button type="button" class="btn-auth-google" id="btnLoginGoogle">
+          <svg class="google-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.28 14.27a7.195 7.195 0 0 1 0-4.54V6.58H1.25a11.98 11.98 0 0 0 0 10.84l4.03-3.15z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+          </svg>
+          <span>Login with Google</span>
+        </button>
+
+      </form>
+
+      <!-- 7. Prompt: Create Account -->
+      <div class="auth-footer-prompt">
+        Don’t have an account? 
+        <a href="/pages/auth/signup.html" class="auth-link-accent">Create an Account</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bottom Bar / Tagline ("— DEVELOP | DESIGN | BUILD | GROW") -->
+  <footer class="auth-page-bottom-bar" aria-label="Page Footer">
+    <div class="bottom-tagline-cluster">
+      <span class="bottom-tagline-dash" aria-hidden="true"></span>
+      <span class="bottom-tagline-text">DEVELOP &nbsp;|&nbsp; DESIGN &nbsp;|&nbsp; BUILD &nbsp;|&nbsp; GROW</span>
+    </div>
+  </footer>
+  </section>
+
+  <script src="/scripts/auth.js"></script>
+</body>
+</html>

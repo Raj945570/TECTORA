@@ -1,0 +1,225 @@
+/* ==========================================================================
+   TECTORA LIGHT THEME DESIGN SYSTEM (Federal Land Style Luxury Real Estate)
+   Minimal, Clean Spacing, Soft Shadows, Playfair Display & Inter
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap');
+
+:root {
+  /* Colors */
+  --bg-page: #FAFAF8;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F3F4F1;
+  --bg-alt: #F8F8F5;
+
+  /* Primary & Accent */
+  --navy-primary: #0B1F3A;
+  --navy-hover: #071527;
+  --navy-muted: #1A3152;
+  
+  --gold-accent: #C8A45D;
+  --gold-hover: #B7934C;
+  --gold-light: #F4EFE6;
+  --gold-border: rgba(200, 164, 93, 0.4);
+
+  /* Text Colors */
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A5568;
+  --text-muted: #64748B;
+  --text-dim: #94A3B8;
+
+  /* Borders & Dividers */
+  --border-light: #E8E8E4;
+  --border-card: #E5E7EB;
+  --border-focus: #C8A45D;
+
+  /* Soft Shadows (No heavy glow) */
+  --shadow-subtle: 0 2px 8px rgba(11, 31, 58, 0.04);
+  --shadow-card: 0 6px 24px rgba(11, 31, 58, 0.06);
+  --shadow-elevated: 0 16px 40px -10px rgba(11, 31, 58, 0.1);
+  --shadow-floating: 0 20px 48px -12px rgba(11, 31, 58, 0.14);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Layout */
+  --nav-height: 80px;
+  --container-max: 1320px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Reusable Section Headers */
+.section-wrapper {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-bottom: 14px;
+}
+
+.section-tag::before {
+  content: '';
+  width: 18px;
+  height: 1.5px;
+  background-color: var(--gold-accent);
+  display: inline-block;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy-primary);
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+/* Elegant Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(11, 31, 58, 0.12);
+}
+
+.btn-primary:hover {
+  background-color: var(--navy-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(11, 31, 58, 0.2);
+  color: #FFFFFF;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--navy-primary);
+  border-color: var(--navy-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-gold {
+  background-color: var(--gold-accent);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(200, 164, 93, 0.25);
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(200, 164, 93, 0.35);
+}
+
+.btn-pill {
+  border-radius: var(--radius-pill);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Notification Toast */
+.toast-box {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--navy-primary);
+  color: #FFFFFF;
+  padding: 14px 22px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 2000;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.toast-box.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .section-wrapper {
+    padding: 70px 0;
+  }
+  .container {
+    padding: 0 20px;
+  }
+}

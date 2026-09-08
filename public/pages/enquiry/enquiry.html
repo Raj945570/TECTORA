@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enquire Now — TECTORA Smart Infrastructure Platform</title>
+  <meta name="description" content="Submit your infrastructure, procurement, and commercial project requirements directly to TECTORA advisory and engineering teams." />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
+  <link rel="stylesheet" href="/styles/enquiry.css?v=3" />
+
+  <!-- Auth Gatekeeper: Requires authentication -->
+  <script src="/scripts/auth-guard.js"></script>
+  <script>
+    if (window.TectoraAuth) {
+      window.TectoraAuth.requireAuth();
+    }
+  </script>
+</head>
+<body class="enquiry-page-body">
+
+  <!-- ========================================================================
+       1. TOP NAVIGATION HEADER (Crisp White Bar matching mockup)
+       ======================================================================== -->
+  <header class="tectora-header" id="tectoraHeader">
+    <div class="nav-container">
+      
+      <!-- Left: Logo -->
+      <a href="/index.html" class="brand-logo-wrap" aria-label="TECTORA Home">
+        <img 
+          src="/assets/images/tectora-logo-new.png" 
+          alt="TECTORA" 
+          class="brand-actual-logo" 
+        />
+      </a>
+
+      <!-- Center: Menu -->
+      <nav class="nav-center" id="navCenter" aria-label="Main Navigation">
+        <ul class="nav-links-list">
+          <li class="nav-link-item"><a href="/index.html#home" class="nav-link">Home</a></li>
+          <li class="nav-link-item"><a href="/index.html#about" class="nav-link">About</a></li>
+          <li class="nav-link-item"><a href="/pages/services/commercial.html" class="nav-link">Commercial</a></li>
+          <li class="nav-link-item"><a href="/index.html#services" class="nav-link">Services</a></li>
+          <li class="nav-link-item"><a href="/pages/enquiry/enquiry.html" class="nav-btn-enquiry is-active">Enquiry Now</a></li>
+          <li class="nav-link-item"><a href="/index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Side: Search & CTA -->
+      <div class="nav-right">
+        <div class="search-wrapper" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="search" 
+            id="navSearchInput" 
+            class="search-input" 
+            placeholder="Search platform..." 
+            aria-label="Search platform"
+            autocomplete="off"
+          />
+        </div>
+
+        <a href="/pages/auth/login.html" class="nav-auth-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Sign In
+        </a>
+
+        <a href="/index.html#contact" class="btn-quote" id="btnNavQuote">
+          Get a Quote
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px;" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. FULL-BLEED CINEMATIC HERO SECTION (Matching User Mockup)
+       ======================================================================== -->
+  <main class="enquiry-hero-section">
+    <div class="enquiry-hero-container">
+      
+      <!-- Left-Aligned Form Column -->
+      <div class="enquiry-form-column">
+        
+        <!-- Kicker Tagline -->
+        <p class="enquiry-kicker">LET'S BUILD TOGETHER</p>
+
+        <!-- Main Title: Gold ENQUIRE + Navy NOW -->
+        <h1 class="enquiry-main-title">
+          <span class="title-gold">ENQUIRE</span> <span class="title-navy">NOW</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="enquiry-subtitle">
+          Share your requirements and our team will get back to you soon.
+        </p>
+
+        <!-- Floating White Card -->
+        <div class="enquiry-card">
+          <form id="dedicatedEnquiryForm" class="enquiry-form" method="POST" novalidate>
+            
+            <!-- 1. Full Name * -->
+            <div class="form-field-group">
+              <div class="field-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <input 
+                type="text" 
+                id="fullName" 
+                name="fullName" 
+                class="field-input" 
+                placeholder="Full Name *" 
+                required 
+                autocomplete="name" 
+              />
+            </div>
+
+            <!-- 2. Email Address * -->
+            <div class="form-field-group">
+              <div class="field-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="field-input" 
+                placeholder="Email Address *" 
+                required 
+                autocomplete="email" 
+              />
+            </div>
+
+            <!-- 3. Phone Number * -->
+            <div class="form-field-group">
+              <div class="field-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                class="field-input" 
+                placeholder="Phone Number *" 
+                required 
+                autocomplete="tel" 
+              />
+            </div>
+
+            <!-- 4. Project Type * (dropdown - REQUIRED) -->
+            <div class="form-field-group select-field-group">
+              <div class="field-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                  <line x1="9" y1="6" x2="9" y2="6.01"></line>
+                  <line x1="15" y1="6" x2="15" y2="6.01"></line>
+                  <line x1="9" y1="10" x2="9" y2="10.01"></line>
+                  <line x1="15" y1="10" x2="15" y2="10.01"></line>
+                  <line x1="9" y1="14" x2="9" y2="14.01"></line>
+                  <line x1="15" y1="14" x2="15" y2="14.01"></line>
+                  <line x1="9" y1="18" x2="15" y2="18"></line>
+                </svg>
+              </div>
+              <select id="projectType" name="projectType" class="field-input field-select" required>
+                <option value="" disabled selected>Project Type *</option>
+                <option value="Commercial Infrastructure & Hubs">Commercial Infrastructure & Hubs</option>
+                <option value="Highway, Road & Bridge Construction">Highway, Road & Bridge Construction</option>
+                <option value="Industrial & Warehousing Logistics">Industrial & Warehousing Logistics</option>
+                <option value="Urban Architecture & Mixed-Use">Urban Architecture & Mixed-Use</option>
+                <option value="Structural & Precast RCC Framework">Structural & Precast RCC Framework</option>
+                <option value="Turnkey Project Management & PMO">Turnkey Project Management & PMO</option>
+                <option value="Direct Material Procurement & Supply">Direct Material Procurement & Supply</option>
+                <option value="Specialized Engineering Advisory">Specialized Engineering Advisory</option>
+              </select>
+              <div class="select-chevron" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 5. Location (optional) -->
+            <div class="form-field-group">
+              <div class="field-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <input 
+                type="text" 
+                id="location" 
+                name="location" 
+                class="field-input" 
+                placeholder="Location" 
+                autocomplete="address-level2" 
+              />
+            </div>
+
+            <!-- 6. Message / Requirements * -->
+            <div class="form-field-group textarea-group">
+              <div class="field-icon-wrap textarea-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <textarea 
+                id="message" 
+                name="message" 
+                class="field-input field-textarea" 
+                placeholder="Your Message / Requirements *" 
+                rows="3" 
+                required
+              ></textarea>
+            </div>
+
+            <!-- Submit CTA Button -->
+            <button type="submit" id="btnSubmitEnquiry" class="btn-enquiry-submit">
+              <span>Submit Inquiry</span>
+              <svg class="btn-arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <!-- Security Note -->
+            <div class="enquiry-security-note">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>Your information is secure with us.</span>
+            </div>
+
+            <!-- Feedback Banner for Successful Real Submission -->
+            <div class="enquiry-feedback-banner" id="enquiryFeedbackBanner">
+              <div class="feedback-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="9 12 12 15 16 10"></polyline>
+                </svg>
+                <span>Inquiry Successfully Registered</span>
+              </div>
+              <div class="feedback-body">
+                Thank you. Your parameters have been registered under Reference ID:
+                <div class="feedback-ref" id="enquiryFeedbackRef">TEC-ENQ-XXXX</div>
+                A TECTORA infrastructure liaison will review your specifications and connect within 24 hours.
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Trust Badges Row (4 Items with Subtle Dividers) -->
+        <div class="enquiry-trust-row">
+          
+          <!-- 1. Expert Guidance -->
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+            </svg>
+            <span class="trust-label">Expert<br/>Guidance</span>
+          </div>
+
+          <div class="trust-divider" aria-hidden="true"></div>
+
+          <!-- 2. Quality Solutions -->
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+            <span class="trust-label">Quality<br/>Solutions</span>
+          </div>
+
+          <div class="trust-divider" aria-hidden="true"></div>
+
+          <!-- 3. Dedicated Support -->
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span class="trust-label">Dedicated<br/>Support</span>
+          </div>
+
+          <div class="trust-divider" aria-hidden="true"></div>
+
+          <!-- 4. Concept to Completion -->
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+            <span class="trust-label">From Concept<br/>to Completion</span>
+          </div>
+
+        </div>
+
+        <!-- Bottom Left Mark: Gold Rule + WWW.TECTORA.COM -->
+        <div class="enquiry-web-mark">
+          <span class="web-mark-line" aria-hidden="true"></span>
+          <span class="web-mark-text">WWW.TECTORA.COM</span>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="/scripts/navbar.js"></script>
+  <script src="/scripts/enquiry.js"></script>
+
+</body>
+</html>

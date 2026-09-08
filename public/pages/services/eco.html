@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco Friendly Solutions & Sustainable Engineering — TECTORA</title>
+  <meta name="description" content="Audited commercial solar rooftop EPC, certified low-carbon building materials, and smart green building technologies for net-zero infrastructure." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
+  <link rel="stylesheet" href="/styles/sections.css" />
+
+  <!-- Auth Gatekeeper: Requires authentication -->
+  <script src="/scripts/auth-guard.js"></script>
+  <script>
+    if (window.TectoraAuth) {
+      window.TectoraAuth.requireAuth();
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="tectora-header" id="tectoraHeader">
+    <div class="nav-container">
+      <a href="/index.html" class="brand-logo-wrap" aria-label="TECTORA Home">
+        <img src="/assets/images/tectora-logo-new.png" alt="TECTORA" class="brand-actual-logo" />
+      </a>
+
+      <nav class="nav-center" id="navCenter" aria-label="Main Navigation">
+        <ul class="nav-links-list">
+          <li class="nav-link-item"><a href="/index.html#home" class="nav-link">Home</a></li>
+          <li class="nav-link-item"><a href="/index.html#about" class="nav-link">About</a></li>
+          <li class="nav-link-item"><a href="/pages/services/commercial.html" class="nav-link">Commercial</a></li>
+          <li class="nav-link-item"><a href="/index.html#services" class="nav-link is-active">Services</a></li>
+          <li class="nav-link-item"><a href="/pages/enquiry/enquiry.html" class="nav-btn-enquiry">Enquiry Now</a></li>
+          <li class="nav-link-item"><a href="/index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-right">
+        <div class="search-wrapper" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" id="navSearchInput" class="search-input" placeholder="Search platform..." aria-label="Search platform" autocomplete="off" />
+        </div>
+        <a href="/pages/auth/login.html" class="nav-auth-link">Sign In</a>
+        <a href="#quote" class="btn-quote" id="btnNavQuote">Get a Quote</a>
+        <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- A. Hero Section (Title + 2 lines max description) -->
+    <section class="seller-page-hero">
+      <div class="container">
+        <div class="service-breadcrumb">
+          <a href="/index.html">Platform</a> &nbsp;/&nbsp; <span>Eco Friendly Solutions</span>
+        </div>
+        <h1 class="service-hero-title">Eco Friendly &amp; Sustainable Solutions</h1>
+        <p class="service-hero-desc">
+          Commercial solar rooftop EPC, certified low-carbon building materials, and smart energy optimization systems built for net-zero infrastructure.
+        </p>
+
+        <div class="seller-hero-stats">
+          <div class="seller-hero-stat-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>IGBC &amp; LEED Accredited</span>
+          </div>
+          <div class="seller-hero-stat-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Tier-1 Solar Photovoltaic</span>
+          </div>
+          <div class="seller-hero-stat-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Certified Carbon Offsets</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B. Eco Providers Grid Layout (Future Seller Data) -->
+    <section class="seller-listing-section">
+      <div class="container">
+        <div class="seller-controls-bar">
+          <div class="seller-filter-tabs">
+            <a href="javascript:void(0)" class="seller-filter-tab is-active">All Solutions</a>
+            <a href="javascript:void(0)" class="seller-filter-tab">Solar Rooftop EPC</a>
+            <a href="javascript:void(0)" class="seller-filter-tab">Low-Carbon Concrete</a>
+            <a href="javascript:void(0)" class="seller-filter-tab">Smart IBMS Energy</a>
+            <a href="javascript:void(0)" class="seller-filter-tab">Water Circularity</a>
+          </div>
+          <div class="seller-search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" placeholder="Search solar EPC, carbon credits, or green ratings..." />
+          </div>
+        </div>
+
+        <div class="seller-listing-grid">
+          <!-- Eco Provider 1 -->
+          <div class="seller-card">
+            <div class="seller-header-row">
+              <div class="seller-title-wrap">
+                <h3 class="seller-name">SunGrid Commercial Solar EPC</h3>
+                <div class="seller-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Renewable Utility &amp; Rooftop Division</span>
+                </div>
+              </div>
+              <span class="seller-verified-badge">✓ Tier-1 EPC</span>
+            </div>
+            <p class="seller-desc">
+              Turnkey engineering for commercial rooftop solar, bi-facial monocrystalline panels, grid-tie central string inverters, and net metering execution.
+            </p>
+            <div class="seller-tags-row">
+              <span class="seller-tag-item">Tier-1 Bifacial</span>
+              <span class="seller-tag-item">CAPEX / OPEX RESCO</span>
+              <span class="seller-tag-item">25-Yr Performance</span>
+            </div>
+            <div class="seller-specs-row">
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Commissioned Capacity</span>
+                <span class="seller-spec-val">120+ MW</span>
+              </div>
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Estimated Tariff</span>
+                <span class="seller-spec-val">₹3.60 / kWh</span>
+              </div>
+            </div>
+            <div class="seller-footer-actions">
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-quote">Request Solar Audit</a>
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-outline">Yield Report</a>
+            </div>
+          </div>
+
+          <!-- Eco Provider 2 -->
+          <div class="seller-card">
+            <div class="seller-header-row">
+              <div class="seller-title-wrap">
+                <h3 class="seller-name">EcoCrete Geopolymer Solutions</h3>
+                <div class="seller-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Low-Carbon Structural Plant Hub</span>
+                </div>
+              </div>
+              <span class="seller-verified-badge">✓ EPD Certified</span>
+            </div>
+            <p class="seller-desc">
+              Zero-clinker and slag-activated geopolymer concrete reducing embodied carbon by up to 60% compared to standard Portland mixes.
+            </p>
+            <div class="seller-tags-row">
+              <span class="seller-tag-item">60% Low Carbon</span>
+              <span class="seller-tag-item">IS 16714 Compliant</span>
+              <span class="seller-tag-item">Structural M35-M50</span>
+            </div>
+            <div class="seller-specs-row">
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Embodied Carbon</span>
+                <span class="seller-spec-val">138 kg CO₂/m³</span>
+              </div>
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Supply Benchmark</span>
+                <span class="seller-spec-val">₹4,450 / m³</span>
+              </div>
+            </div>
+            <div class="seller-footer-actions">
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-quote">Book Low-Carbon Pour</a>
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-outline">EPD Dossier</a>
+            </div>
+          </div>
+
+          <!-- Eco Provider 3 -->
+          <div class="seller-card">
+            <div class="seller-header-row">
+              <div class="seller-title-wrap">
+                <h3 class="seller-name">EnerSense Smart IBMS Dynamics</h3>
+                <div class="seller-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>AI Energy Management Enclave</span>
+                </div>
+              </div>
+              <span class="seller-verified-badge">✓ BEE 5-Star</span>
+            </div>
+            <p class="seller-desc">
+              Cloud IoT building management system providing dynamic HVAC thermal control, daylight-harvesting occupancy sensors, and real-time ESG metrics.
+            </p>
+            <div class="seller-tags-row">
+              <span class="seller-tag-item">AI Chiller Control</span>
+              <span class="seller-tag-item">IoT Sub-Metering</span>
+              <span class="seller-tag-item">ESG Reporting</span>
+            </div>
+            <div class="seller-specs-row">
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Energy Reduction</span>
+                <span class="seller-spec-val">22% - 31% Verified</span>
+              </div>
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Payback Period</span>
+                <span class="seller-spec-val">14 Months Avg</span>
+              </div>
+            </div>
+            <div class="seller-footer-actions">
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-quote">Request BMS Demo</a>
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-outline">Savings Audit</a>
+            </div>
+          </div>
+
+          <!-- Eco Provider 4 -->
+          <div class="seller-card">
+            <div class="seller-header-row">
+              <div class="seller-title-wrap">
+                <h3 class="seller-name">TerraCycle Water &amp; Zero Discharge</h3>
+                <div class="seller-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Environmental Engineering Facility</span>
+                </div>
+              </div>
+              <span class="seller-verified-badge">✓ ZLD Audited</span>
+            </div>
+            <p class="seller-desc">
+              Decentralized biological sewage treatment plants (MBBR/MBR), rainwater retention aquifer recharge pits, and dual-plumbing reuse frameworks.
+            </p>
+            <div class="seller-tags-row">
+              <span class="seller-tag-item">MBR Technology</span>
+              <span class="seller-tag-item">Zero Liquid Discharge</span>
+              <span class="seller-tag-item">Rain Recharge Pits</span>
+            </div>
+            <div class="seller-specs-row">
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Plant Scale</span>
+                <span class="seller-spec-val">50 KLD – 2 MLD</span>
+              </div>
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Water Recycled</span>
+                <span class="seller-spec-val">94% Reusable</span>
+              </div>
+            </div>
+            <div class="seller-footer-actions">
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-quote">Request STP Proposal</a>
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-outline">Process Flow</a>
+            </div>
+          </div>
+
+          <!-- Eco Provider 5 -->
+          <div class="seller-card">
+            <div class="seller-header-row">
+              <div class="seller-title-wrap">
+                <h3 class="seller-name">AeroLite AAC Blocks &amp; Panels</h3>
+                <div class="seller-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Clean Technology Manufacturing Plant</span>
+                </div>
+              </div>
+              <span class="seller-verified-badge">✓ GreenPro Mark</span>
+            </div>
+            <p class="seller-desc">
+              Lightweight autoclaved aerated concrete blocks providing superior thermal insulation (U-value 0.16), 4-hour fire resistance, and zero toxic emissions.
+            </p>
+            <div class="seller-tags-row">
+              <span class="seller-tag-item">Thermal U=0.16</span>
+              <span class="seller-tag-item">4-Hour Fire Rated</span>
+              <span class="seller-tag-item">50% Dead Load Red.</span>
+            </div>
+            <div class="seller-specs-row">
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Monthly Output</span>
+                <span class="seller-spec-val">45,000 m³</span>
+              </div>
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Supply Benchmark</span>
+                <span class="seller-spec-val">₹2,850 / m³</span>
+              </div>
+            </div>
+            <div class="seller-footer-actions">
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-quote">Order Block Consignment</a>
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-outline">Thermal Cert</a>
+            </div>
+          </div>
+
+          <!-- Eco Provider 6 -->
+          <div class="seller-card">
+            <div class="seller-header-row">
+              <div class="seller-title-wrap">
+                <h3 class="seller-name">Verdant LEED &amp; IGBC Advisory</h3>
+                <div class="seller-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Sustainability Advisory Practice</span>
+                </div>
+              </div>
+              <span class="seller-verified-badge">✓ LEED AP Lead</span>
+            </div>
+            <p class="seller-desc">
+              Whole-building energy simulation (eQUEST / EnergyPlus), embodied carbon life-cycle assessment (LCA), and turnkey IGBC/LEED Platinum certification filings.
+            </p>
+            <div class="seller-tags-row">
+              <span class="seller-tag-item">LEED Platinum</span>
+              <span class="seller-tag-item">IGBC Super Platinum</span>
+              <span class="seller-tag-item">GRIHA 5-Star</span>
+            </div>
+            <div class="seller-specs-row">
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Certified Buildings</span>
+                <span class="seller-spec-val">54 Mega Projects</span>
+              </div>
+              <div class="seller-spec-unit">
+                <span class="seller-spec-label">Rating Success</span>
+                <span class="seller-spec-val">100% First Pass</span>
+              </div>
+            </div>
+            <div class="seller-footer-actions">
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-quote">Engage Sustainability AP</a>
+              <a href="/pages/enquiry/enquiry.html?service=eco" class="seller-btn-outline">Track Record</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C. Details Section (Offerings & Bullet Points) -->
+    <section class="service-details-section">
+      <div class="container">
+        <div class="section-tag">Sustainability Framework</div>
+        <h2 class="section-title">Turnkey Sustainable Engineering</h2>
+        <p class="section-subtitle">
+          Accelerate your transition to net-zero carbon operations while lowering long-term lifecycle operating expenditures.
+        </p>
+
+        <!-- Offerings Grid -->
+        <div class="service-offerings-grid">
+          <div class="service-offering-card">
+            <span class="service-offering-num">Eco 01</span>
+            <h3 class="service-offering-title">Commercial Solar Rooftop Microgrids</h3>
+            <p class="service-offering-desc">
+              High-efficiency monocrystalline solar systems with battery storage backup, zero-export protection relays, and computerized remote generation monitoring.
+            </p>
+          </div>
+
+          <div class="service-offering-card">
+            <span class="service-offering-num">Eco 02</span>
+            <h3 class="service-offering-title">Decarbonized Concrete &amp; Materials</h3>
+            <p class="service-offering-desc">
+              Supplementary cementitious materials (fly-ash, GGBS, silica fume) and geopolymer mixes delivering structural durability with verified low embodied carbon.
+            </p>
+          </div>
+
+          <div class="service-offering-card">
+            <span class="service-offering-num">Eco 03</span>
+            <h3 class="service-offering-title">Smart Building Energy Analytics</h3>
+            <p class="service-offering-desc">
+              Cloud automated building management systems that continuously harmonize chiller loads, ventilation rates, and lighting based on actual occupancy.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bullet Points of Offerings -->
+        <div class="service-bullets-wrap">
+          <h3 class="service-bullets-title">Certifications &amp; Engineering Standards</h3>
+          <ul class="service-bullets-list">
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Turnkey filings for IGBC, GRIHA, and USGBC LEED ratings</span>
+            </li>
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Guaranteed solar performance ratio (PR &gt; 78%) with degradation warranties</span>
+            </li>
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Digital Carbon Footprint Invoices compliant with BRSR regulatory guidelines</span>
+            </li>
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Zero liquid discharge (ZLD) closed-loop wastewater recycling plants</span>
+            </li>
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Energy conservation building code (ECBC) envelope modeling</span>
+            </li>
+            <li class="service-bullet-item">
+              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Green power purchase agreement (PPA) hedging against escalating grid tariffs</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- D. CTA Section -->
+    <section class="service-cta-banner" id="quote">
+      <div class="container">
+        <div class="service-cta-inner">
+          <div class="section-tag">Sustainable Future</div>
+          <h2 class="service-cta-title">Decarbonize Your Built Environment</h2>
+          <p class="service-cta-sub">
+            Share your roof layout, electricity bills, or sustainability mandate to receive an institutional solar and green engineering feasibility plan.
+          </p>
+          <div class="service-cta-btns">
+            <a href="/pages/enquiry/enquiry.html?service=eco" class="btn btn-primary" style="height: 48px; padding: 0 32px;">
+              Request Green Audit &rarr;
+            </a>
+            <a href="/index.html#offerings" class="btn btn-secondary" style="height: 48px; padding: 0 28px;">
+              Explore All Offerings
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal Consistent Footer -->
+  <footer class="tectora-footer-light">
+    <div class="container">
+      <div class="footer-top-row">
+        <div>
+          <img src="/assets/images/tectora-logo-new.png" alt="TECTORA" style="height: 38px; margin-bottom: 16px;" />
+          <p class="footer-brand-copy">
+            Unified digital platform for smart infrastructure procurement, commercial land development, and engineering execution.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Offerings</h4>
+          <ul class="footer-nav-list">
+            <li><a href="/pages/services/materials.html">Raw Materials</a></li>
+            <li><a href="/pages/services/commercial.html">Commercial Land</a></li>
+            <li><a href="/pages/services/contractors.html">Experts &amp; Consultants</a></li>
+            <li><a href="/pages/services/interior.html">Interior Designers</a></li>
+            <li><a href="/pages/services/eco.html">Eco Friendly Solutions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-nav-list">
+            <li><a href="mailto:contact@tectora.com">contact@tectora.com</a></li>
+            <li><a href="tel:+911244508000">+91 124 450 8000</a></li>
+            <li><span style="color: var(--text-secondary); font-size: 0.88rem;">Cyber City Corporate Hub</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-legal-bar">
+        <div>&copy; 2026 TECTORA Technologies Ltd. All rights reserved.</div>
+        <div>Eco Friendly Solutions &amp; Sustainable Engineering</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/scripts/main.js"></script>
+</body>
+</html>
