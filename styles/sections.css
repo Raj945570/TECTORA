@@ -1422,4 +1422,312 @@
   }
 }
 
+/* --------------------------------------------------------------------------
+   ABOUT / OWNER PROFILE SECTION
+   -------------------------------------------------------------------------- */
+
+.about-section-wrapper {
+  background-color: var(--bg-alt);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 84px 0;
+  position: relative;
+}
+
+.about-split-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 36px;
+}
+
+.about-owner-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-owner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -8px rgba(11, 31, 58, 0.12);
+}
+
+.about-owner-img-frame {
+  position: relative;
+  width: 100%;
+  height: 475px;
+  background-color: #F1F5F9;
+  overflow: hidden;
+}
+
+.about-owner-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.about-owner-card:hover .about-owner-photo {
+  transform: scale(1.02);
+}
+
+.about-owner-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background-color: rgba(11, 31, 58, 0.90);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  border: 1px solid rgba(200, 164, 93, 0.4);
+}
+
+.about-badge-icon {
+  color: var(--gold-accent);
+  display: flex;
+  align-items: center;
+}
+
+.about-owner-meta {
+  padding: 24px;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.about-owner-name {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  margin-bottom: 4px;
+}
+
+.about-owner-designation {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gold-accent);
+  margin-bottom: 2px;
+}
+
+.about-owner-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.about-content-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.about-vision-box {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 34px 34px 28px;
+  box-shadow: var(--shadow-subtle);
+  position: relative;
+}
+
+.about-quote-icon {
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.about-vision-quote {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+  margin: 0 0 20px;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  font-style: normal;
+}
+
+.about-vision-signoff {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-light);
+  padding-top: 14px;
+}
+
+.about-signoff-author {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+}
+
+.about-signoff-role {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.about-contact-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 26px 30px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.about-contact-title {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  margin-bottom: 16px;
+}
+
+.about-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.about-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.about-contact-item:hover {
+  background-color: #FFFFFF;
+  border-color: var(--gold-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(11, 31, 58, 0.06);
+}
+
+.about-contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy-primary);
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.about-contact-item:hover .about-contact-icon {
+  background-color: var(--navy-primary);
+  color: var(--gold-accent);
+  border-color: var(--navy-primary);
+}
+
+.about-contact-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.about-contact-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.about-contact-val {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.about-whatsapp-row {
+  border-top: 1px solid var(--border-light);
+  padding-top: 16px;
+}
+
+.about-whatsapp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: #25D366;
+  color: #FFFFFF;
+  border-radius: 24px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
+  transition: all 0.2s ease;
+}
+
+.about-whatsapp-pill:hover {
+  background-color: #20BA5A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.38);
+  color: #FFFFFF;
+}
+
+@media (max-width: 1024px) {
+  .about-split-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .about-owner-img-frame {
+    height: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-owner-img-frame {
+    height: 340px;
+  }
+  .about-vision-box {
+    padding: 24px 20px;
+  }
+  .about-contact-card {
+    padding: 20px 16px;
+  }
+  .about-whatsapp-pill {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
 
