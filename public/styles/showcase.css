@@ -10,7 +10,7 @@
 .platform-showcase-section {
   position: relative;
   width: 100%;
-  padding: clamp(60px, 7vw, 100px) 0 clamp(70px, 8vw, 110px);
+  padding: clamp(56px, 6vw, 84px) 0 clamp(40px, 5vw, 56px);
   background-color: #FAF9F6;
   overflow: hidden;
   border-top: 1px solid rgba(226, 232, 240, 0.7);

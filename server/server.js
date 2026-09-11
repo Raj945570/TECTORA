@@ -41,7 +41,12 @@ app.get(['/signup.html', '/pages/auth/signup.html'], guestOnlyPage, (req, res) =
 });
 
 // 4. Convenience Routes for Services & Subpages (Protected)
-// Allows direct access via /materials.html as well as /pages/services/materials.html
+// Allows direct access via /services.html as well as /pages/services.html
+app.get(['/services.html', '/pages/services.html'], protectPage, (req, res) => {
+  res.sendFile(path.join(PUBLIC_DIR, 'services.html'));
+});
+
+// Subpage direct routes
 app.get(['/materials.html', '/pages/services/materials.html'], protectPage, (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'pages', 'services', 'materials.html'));
 });
