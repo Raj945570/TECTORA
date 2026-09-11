@@ -58,8 +58,8 @@ app.get(['/eco.html', '/pages/services/eco.html'], protectPage, (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'pages', 'services', 'eco.html'));
 });
 
-app.get(['/interior.html', '/pages/services/interior.html'], protectPage, (req, res) => {
-  res.sendFile(path.join(PUBLIC_DIR, 'pages', 'services', 'interior.html'));
+app.get(['/interior.html', '/pages/interior.html', '/pages/services/interior.html'], protectPage, (req, res) => {
+  res.sendFile(path.join(PUBLIC_DIR, 'pages', 'interior.html'));
 });
 
 app.get(['/enquiry.html', '/pages/enquiry/enquiry.html'], protectPage, (req, res) => {

@@ -532,68 +532,7 @@
 .tectora-footer-light {
   background-color: #FFFFFF;
   border-top: 1px solid var(--border-light);
-  padding: 80px 0 40px;
-}
-
-.footer-top-row {
-  display: grid;
-  grid-template-columns: 1.8fr 1fr 1.2fr;
-  gap: 56px;
-  margin-bottom: 56px;
-}
-
-.footer-brand-title {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  color: var(--navy-primary);
-  margin-bottom: 12px;
-}
-
-.footer-brand-copy {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 320px;
-}
-
-.footer-heading {
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--navy-primary);
-  margin-bottom: 20px;
-}
-
-.footer-nav-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-nav-list a {
-  text-decoration: none;
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  transition: color 0.2s ease;
-}
-
-.footer-nav-list a:hover {
-  color: var(--navy-primary);
-}
-
-.footer-legal-bar {
-  border-top: 1px solid var(--border-light);
-  padding-top: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  font-size: 0.82rem;
-  color: var(--text-muted);
+  padding: 64px 0 32px;
 }
 
 @media (max-width: 1024px) {
