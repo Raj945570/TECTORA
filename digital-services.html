@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Services — TECTORA</title>
+  <meta name="description" content="Digital Solutions for a Smarter Tomorrow. We help your business grow with powerful digital solutions including website development, app development, UI/UX, marketing, and content." />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Core & Custom Stylesheets -->
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
+  <link rel="stylesheet" href="/styles/digital-services.css" />
+
+  <!-- Auth Session Sync (Non-blocking) -->
+  <script src="/scripts/auth-guard.js"></script>
+</head>
+<body class="digital-page">
+
+  <!-- ========================================================================
+       1. HEADER (Top Navigation)
+       ======================================================================== -->
+  <header class="tectora-header" id="tectoraHeader">
+    <div class="nav-container">
+      
+      <!-- Left: Logo (TECTORA) -->
+      <a href="/index.html" class="brand-logo-wrap" aria-label="TECTORA Home">
+        <img 
+          src="/assets/images/tectora-logo-new.png" 
+          alt="TECTORA" 
+          class="brand-actual-logo" 
+        />
+      </a>
+
+      <!-- Center: Menu -->
+      <nav class="nav-center" id="navCenter" aria-label="Main Navigation">
+        <ul class="nav-links-list">
+          <li class="nav-link-item"><a href="/index.html" class="nav-link">Home</a></li>
+          <li class="nav-link-item"><a href="/index.html#about" class="nav-link">About</a></li>
+          <li class="nav-link-item"><a href="/digital-services.html" class="nav-link is-active">Digital Services</a></li>
+          <li class="nav-link-item"><a href="/services.html" class="nav-link">Services</a></li>
+          <li class="nav-link-item"><a href="/index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Side: Search & CTA -->
+      <div class="nav-right">
+        <!-- Search bar -->
+        <div class="search-wrapper" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="search" 
+            id="navSearchInput" 
+            class="search-input" 
+            placeholder="Search platform..." 
+            aria-label="Search platform"
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Auth Link -->
+        <a href="/pages/auth/login.html" class="nav-auth-link">Sign In</a>
+
+        <!-- Button: "Enquiry Now" -->
+        <a href="/pages/enquiry/enquiry.html" class="btn-quote" id="btnNavQuote">Enquiry Now</a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================
+         2. HERO SECTION
+         ======================================================================== -->
+    <section class="digital-hero" id="hero">
+      <div class="container">
+        <!-- Gold luxury badge -->
+        <div class="digital-hero-badge">
+          <span class="digital-hero-badge-dot"></span>
+          <span>TECTORA Digital Solutions</span>
+        </div>
+
+        <!-- Exact Headline -->
+        <h1 class="digital-hero-title">
+          Digital Solutions for a <span class="text-gold">Smarter Tomorrow</span>
+        </h1>
+
+        <!-- Exact Subtext from reference UI -->
+        <p class="digital-hero-subtitle">
+          From creative ideas to real results, we help your brand grow in the digital world.
+        </p>
+
+        <!-- Trust highlights row -->
+        <div class="digital-hero-pills">
+          <div class="digital-hero-pill-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Enterprise-Grade Engineering</span>
+          </div>
+          <div class="digital-hero-pill-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+              <polyline points="16 7 22 7 22 13"></polyline>
+            </svg>
+            <span>Proven Scalability &amp; ROI</span>
+          </div>
+          <div class="digital-hero-pill-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>Agile On-Time Delivery</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. SERVICES GRID SECTION (6 CARDS WITH IN-CARD EXPANDABLE CONTENT)
+         ======================================================================== -->
+    <section class="services-section" id="servicesGridSection">
+      <div class="container">
+        
+        <!-- Header Row -->
+        <div class="services-intro-row">
+          <div class="services-intro-left">
+            <div class="services-intro-tag">Strategic Capabilities</div>
+            <h2 class="services-intro-heading">Tailored Digital Capabilities for Modern Growth</h2>
+          </div>
+          <div class="services-intro-hint">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            <span>Click any service card to reveal specialized tiers</span>
+          </div>
+        </div>
+
+        <!-- 6 Core Services Grid -->
+        <div class="services-cards-grid" id="servicesAccordionGrid">
+
+          <!-- ------------------------------------------------------------------
+               CARD 1: Website Development
+               ------------------------------------------------------------------ -->
+          <article 
+            class="service-card-item" 
+            data-service="website-development"
+            tabindex="0"
+            role="button"
+            aria-expanded="false"
+            aria-controls="drawer-website-development"
+          >
+            <!-- Card Summary -->
+            <div class="service-card-summary">
+              <div class="service-card-header">
+                <div class="service-card-icon-box" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <span class="service-card-number-badge">1</span>
+              </div>
+              <h3 class="service-card-title">Website Development</h3>
+              <p class="service-card-desc">
+                High-performance, secure, and SEO-optimized web engineering crafted to accelerate client acquisition and digital prestige.
+              </p>
+              <div class="service-card-action">
+                <div class="service-card-expand-label">
+                  <span>Explore Solutions</span>
+                </div>
+                <div class="service-card-chevron-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Expandable Drawer Content -->
+            <div class="service-card-drawer" id="drawer-website-development">
+              <div class="service-card-drawer-inner">
+                <div class="drawer-divider">
+                  <span class="drawer-divider-line"></span>
+                  <span class="drawer-divider-text">Website Tiers</span>
+                  <span class="drawer-divider-line"></span>
+                </div>
+
+                <div class="drawer-subservices-list">
+                  <!-- Tier 1: Static Website -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/web-static.jpg" 
+                        alt="Static Website on MacBook laptop" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Static Website</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Static Website</h4>
+                      <p class="subservice-tier-desc">Simple, fast websites engineered for speed, clean aesthetics, and zero server maintenance.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Lightning Fast</span>
+                        <span>SEO Optimized</span>
+                        <span>Ultra Secure</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Website-Development-Static" class="subservice-tier-btn">
+                        <span>Enquire for Static Site</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 2: Semi-Dynamic Website -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/web-semi-dynamic.jpg" 
+                        alt="Semi-dynamic CMS dashboard on laptop" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Semi-Dynamic</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Semi-Dynamic Website</h4>
+                      <p class="subservice-tier-desc">Partially editable content powered by modern headless CMS, blog editors, and dynamic lead forms.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Headless CMS</span>
+                        <span>Editable Catalogs</span>
+                        <span>Lead Capture</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Website-Development-Semi-Dynamic" class="subservice-tier-btn">
+                        <span>Enquire for Semi-Dynamic</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 3: Fully Dynamic Website -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/web-dynamic.jpg" 
+                        alt="Fully dynamic web app dashboard with charts" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Fully Dynamic</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Fully Dynamic Website</h4>
+                      <p class="subservice-tier-desc">Database driven, advanced features including user authentication, realtime dashboards, and custom APIs.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Database Driven</span>
+                        <span>Auth &amp; Portals</span>
+                        <span>Custom API</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Website-Development-Fully-Dynamic" class="subservice-tier-btn">
+                        <span>Enquire for Full Dynamic</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ------------------------------------------------------------------
+               CARD 2: App Development
+               ------------------------------------------------------------------ -->
+          <article 
+            class="service-card-item" 
+            data-service="app-development"
+            tabindex="0"
+            role="button"
+            aria-expanded="false"
+            aria-controls="drawer-app-development"
+          >
+            <!-- Card Summary -->
+            <div class="service-card-summary">
+              <div class="service-card-header">
+                <div class="service-card-icon-box" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                </div>
+                <span class="service-card-number-badge">2</span>
+              </div>
+              <h3 class="service-card-title">App Design &amp; Development</h3>
+              <p class="service-card-desc">
+                Native iOS, Android, and cross-platform mobile experiences that combine fluid 60fps animations with resilient cloud backends.
+              </p>
+              <div class="service-card-action">
+                <div class="service-card-expand-label">
+                  <span>Explore Solutions</span>
+                </div>
+                <div class="service-card-chevron-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Expandable Drawer Content -->
+            <div class="service-card-drawer" id="drawer-app-development">
+              <div class="service-card-drawer-inner">
+                <div class="drawer-divider">
+                  <span class="drawer-divider-line"></span>
+                  <span class="drawer-divider-text">App Tiers</span>
+                  <span class="drawer-divider-line"></span>
+                </div>
+
+                <div class="drawer-subservices-list">
+                  <!-- Tier 1: Native Mobile Apps -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/app-native.jpg" 
+                        alt="Native smartphone app interface" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Native Apps</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">iOS &amp; Android Native</h4>
+                      <p class="subservice-tier-desc">Uncompromised performance, hardware-level integration, and platform-perfect UX via Swift and Kotlin.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Swift (iOS)</span>
+                        <span>Kotlin (Android)</span>
+                        <span>60fps UI</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=App-Development-Native" class="subservice-tier-btn">
+                        <span>Enquire for Native App</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 2: Cross-Platform Mobile Apps -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/app-crossplatform.jpg" 
+                        alt="Developer desk with React Native mobile test devices" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Cross-Platform</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Cross-Platform Apps</h4>
+                      <p class="subservice-tier-desc">Single unified codebase built on Flutter and React Native, delivering near-native speed at 40% faster rollout.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Flutter</span>
+                        <span>React Native</span>
+                        <span>Fast Go-To-Market</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=App-Development-CrossPlatform" class="subservice-tier-btn">
+                        <span>Enquire for Cross-Platform</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 3: Progressive Web Apps (PWA) -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/web-dynamic.jpg" 
+                        alt="Responsive enterprise Progressive Web App" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">PWA</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Progressive Web Apps (PWA)</h4>
+                      <p class="subservice-tier-desc">Installable, offline-first web apps that work without app store delays, featuring push notifications and instant cache.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Offline Support</span>
+                        <span>Push Alerts</span>
+                        <span>Instant Install</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=App-Development-PWA" class="subservice-tier-btn">
+                        <span>Enquire for PWA</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ------------------------------------------------------------------
+               CARD 3: UI/UX Design
+               ------------------------------------------------------------------ -->
+          <article 
+            class="service-card-item" 
+            data-service="uiux-design"
+            tabindex="0"
+            role="button"
+            aria-expanded="false"
+            aria-controls="drawer-uiux-design"
+          >
+            <!-- Card Summary -->
+            <div class="service-card-summary">
+              <div class="service-card-header">
+                <div class="service-card-icon-box" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"></path>
+                  </svg>
+                </div>
+                <span class="service-card-number-badge">3</span>
+              </div>
+              <h3 class="service-card-title">UI/UX Design</h3>
+              <p class="service-card-desc">
+                World-class digital interface design, user journey optimization, and scalable Figma design systems crafted for effortless user interaction.
+              </p>
+              <div class="service-card-action">
+                <div class="service-card-expand-label">
+                  <span>Explore Solutions</span>
+                </div>
+                <div class="service-card-chevron-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Expandable Drawer Content -->
+            <div class="service-card-drawer" id="drawer-uiux-design">
+              <div class="service-card-drawer-inner">
+                <div class="drawer-divider">
+                  <span class="drawer-divider-line"></span>
+                  <span class="drawer-divider-text">Design Tiers</span>
+                  <span class="drawer-divider-line"></span>
+                </div>
+
+                <div class="drawer-subservices-list">
+                  <!-- Tier 1: User Research & Wireframing -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/uiux-design.jpg" 
+                        alt="UX wireframe sketches and Figma tablet" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">UX Architecture</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">User Research &amp; Wireframing</h4>
+                      <p class="subservice-tier-desc">Empathetic customer journey mapping, structural information architecture, and validated low-fidelity blueprints.</p>
+                      <div class="subservice-tier-tags">
+                        <span>User Blueprints</span>
+                        <span>Journey Mapping</span>
+                        <span>Figma Wireframes</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=UIUX-Research-Wireframing" class="subservice-tier-btn">
+                        <span>Enquire for UX Research</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 2: Design Systems & UI Kits -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/uiux-design.jpg" 
+                        alt="Design system components on tablet" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Design Systems</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Design Systems &amp; UI Kits</h4>
+                      <p class="subservice-tier-desc">Tokenized atomic components, unified color and typography hierarchies, and developer-ready Figma libraries.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Atomic Design</span>
+                        <span>Tokenized Colors</span>
+                        <span>Dev Handoff</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=UIUX-Design-Systems" class="subservice-tier-btn">
+                        <span>Enquire for Design Systems</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 3: Interactive Prototyping & Testing -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/app-native.jpg" 
+                        alt="Interactive mobile app user testing" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Prototyping</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Interactive Prototyping</h4>
+                      <p class="subservice-tier-desc">Clickable, animated prototypes demonstrating precise micro-interactions for stakeholders and usability tests.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Clickable Demos</span>
+                        <span>Micro-Interactions</span>
+                        <span>Usability Testing</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=UIUX-Interactive-Prototyping" class="subservice-tier-btn">
+                        <span>Enquire for Prototyping</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ------------------------------------------------------------------
+               CARD 4: Digital Marketing
+               ------------------------------------------------------------------ -->
+          <article 
+            class="service-card-item" 
+            data-service="digital-marketing"
+            tabindex="0"
+            role="button"
+            aria-expanded="false"
+            aria-controls="drawer-digital-marketing"
+          >
+            <!-- Card Summary -->
+            <div class="service-card-summary">
+              <div class="service-card-header">
+                <div class="service-card-icon-box" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 20V10M12 20V4M6 20v-6"></path>
+                  </svg>
+                </div>
+                <span class="service-card-number-badge">4</span>
+              </div>
+              <h3 class="service-card-title">Digital Marketing</h3>
+              <p class="service-card-desc">
+                Data-driven growth funnels combining high-authority SEO, performance Google/Meta ads, and precision conversion optimization.
+              </p>
+              <div class="service-card-action">
+                <div class="service-card-expand-label">
+                  <span>Explore Solutions</span>
+                </div>
+                <div class="service-card-chevron-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Expandable Drawer Content -->
+            <div class="service-card-drawer" id="drawer-digital-marketing">
+              <div class="service-card-drawer-inner">
+                <div class="drawer-divider">
+                  <span class="drawer-divider-line"></span>
+                  <span class="drawer-divider-text">Marketing Tiers</span>
+                  <span class="drawer-divider-line"></span>
+                </div>
+
+                <div class="drawer-subservices-list">
+                  <!-- Tier 1: SEO -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/marketing-analytics.jpg" 
+                        alt="SEO metrics dashboard on laptop" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Search Visibility</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Search Engine Optimization (SEO)</h4>
+                      <p class="subservice-tier-desc">Technical architecture audits, high-intent keyword strategies, and authoritative backlink acquisition.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Top Search Rank</span>
+                        <span>Technical Audit</span>
+                        <span>Authority Growth</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Digital-Marketing-SEO" class="subservice-tier-btn">
+                        <span>Enquire for SEO</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 2: Performance Paid Ads (PPC) -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/marketing-analytics.jpg" 
+                        alt="Paid ads conversion funnel on laptop" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Performance Media</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Performance Ads &amp; PPC</h4>
+                      <p class="subservice-tier-desc">High-ROI Google Search, YouTube, and Meta ad funnels engineered with strict CPA controls and retargeting.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Google Ads</span>
+                        <span>Meta Retargeting</span>
+                        <span>High ROAS</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Digital-Marketing-PPC" class="subservice-tier-btn">
+                        <span>Enquire for PPC Ads</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 3: Data Analytics & Conversion Rate Optimization -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/web-dynamic.jpg" 
+                        alt="Web conversion analytics dashboard" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Conversion (CRO)</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Data Analytics &amp; CRO</h4>
+                      <p class="subservice-tier-desc">Advanced GA4 event tracking, user heatmap analysis, and systematic A/B testing to maximize revenue per visitor.</p>
+                      <div class="subservice-tier-tags">
+                        <span>GA4 Funnels</span>
+                        <span>Heatmaps &amp; Recording</span>
+                        <span>A/B Testing</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Digital-Marketing-CRO" class="subservice-tier-btn">
+                        <span>Enquire for Analytics &amp; CRO</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ------------------------------------------------------------------
+               CARD 5: Social Media Management
+               ------------------------------------------------------------------ -->
+          <article 
+            class="service-card-item" 
+            data-service="social-media-management"
+            tabindex="0"
+            role="button"
+            aria-expanded="false"
+            aria-controls="drawer-social-media-management"
+          >
+            <!-- Card Summary -->
+            <div class="service-card-summary">
+              <div class="service-card-header">
+                <div class="service-card-icon-box" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </div>
+                <span class="service-card-number-badge">5</span>
+              </div>
+              <h3 class="service-card-title">Social Media Management</h3>
+              <p class="service-card-desc">
+                Strategic brand positioning, viral short-form creative direction, and community cultivation across LinkedIn, Instagram, and YouTube.
+              </p>
+              <div class="service-card-action">
+                <div class="service-card-expand-label">
+                  <span>Explore Solutions</span>
+                </div>
+                <div class="service-card-chevron-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Expandable Drawer Content -->
+            <div class="service-card-drawer" id="drawer-social-media-management">
+              <div class="service-card-drawer-inner">
+                <div class="drawer-divider">
+                  <span class="drawer-divider-line"></span>
+                  <span class="drawer-divider-text">Social Tiers</span>
+                  <span class="drawer-divider-line"></span>
+                </div>
+
+                <div class="drawer-subservices-list">
+                  <!-- Tier 1: Content Strategy -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/social-content.jpg" 
+                        alt="Content planning calendar on smartphone stand" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Strategy &amp; Voice</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Content Strategy &amp; Editorial</h4>
+                      <p class="subservice-tier-desc">Structured 30-day content calendar, refined corporate voice, competitor intelligence, and trend capitalization.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Editorial Calendar</span>
+                        <span>Brand Voice</span>
+                        <span>Audience Research</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Social-Media-Strategy" class="subservice-tier-btn">
+                        <span>Enquire for Strategy</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 2: Creative Design & Reels -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/social-content.jpg" 
+                        alt="Creator desk with camera and smartphone" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Visual Content</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Creative Posts &amp; Reels</h4>
+                      <p class="subservice-tier-desc">Luxury carousels, thumb-stopping vertical reels with crisp kinetic captions, and branded story templates.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Luxury Carousels</span>
+                        <span>Short-Form Video</span>
+                        <span>Dynamic Captions</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Social-Media-Creative-Reels" class="subservice-tier-btn">
+                        <span>Enquire for Creative</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 3: Community Engagement & Growth -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/marketing-analytics.jpg" 
+                        alt="Social engagement analytics chart" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Community Scale</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Community Growth &amp; Engagement</h4>
+                      <p class="subservice-tier-desc">Dedicated comment moderation, DM outreach workflows, industry influencer collaborations, and audience nurturing.</p>
+                      <div class="subservice-tier-tags">
+                        <span>DM Workflows</span>
+                        <span>Influencer Outreach</span>
+                        <span>Reputation Care</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Social-Media-Community-Growth" class="subservice-tier-btn">
+                        <span>Enquire for Community Growth</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ------------------------------------------------------------------
+               CARD 6: Video & Content Creation
+               ------------------------------------------------------------------ -->
+          <article 
+            class="service-card-item" 
+            data-service="video-content-creation"
+            tabindex="0"
+            role="button"
+            aria-expanded="false"
+            aria-controls="drawer-video-content-creation"
+          >
+            <!-- Card Summary -->
+            <div class="service-card-summary">
+              <div class="service-card-header">
+                <div class="service-card-icon-box" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                  </svg>
+                </div>
+                <span class="service-card-number-badge">6</span>
+              </div>
+              <h3 class="service-card-title">Video &amp; Content Creation</h3>
+              <p class="service-card-desc">
+                High-definition corporate films, 3D motion graphics, viral short video cuts, and authoritative industry thought leadership copy.
+              </p>
+              <div class="service-card-action">
+                <div class="service-card-expand-label">
+                  <span>Explore Solutions</span>
+                </div>
+                <div class="service-card-chevron-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Expandable Drawer Content -->
+            <div class="service-card-drawer" id="drawer-video-content-creation">
+              <div class="service-card-drawer-inner">
+                <div class="drawer-divider">
+                  <span class="drawer-divider-line"></span>
+                  <span class="drawer-divider-text">Production Tiers</span>
+                  <span class="drawer-divider-line"></span>
+                </div>
+
+                <div class="drawer-subservices-list">
+                  <!-- Tier 1: Brand Films & Explainers -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/video-production.jpg" 
+                        alt="Dual monitor video editing suite with timeline" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Cinematic Video</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Brand Films &amp; Explainers</h4>
+                      <p class="subservice-tier-desc">4K corporate brand films, cinematic product demonstrations, color grading, and animated 2D/3D explainers.</p>
+                      <div class="subservice-tier-tags">
+                        <span>4K Cinematic</span>
+                        <span>Color Grading</span>
+                        <span>Motion Graphics</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Video-Brand-Films" class="subservice-tier-btn">
+                        <span>Enquire for Brand Film</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 2: Short-Form Social Videos -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/social-content.jpg" 
+                        alt="Short-form video production equipment" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Short-Form</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Short-Form Reels &amp; TikToks</h4>
+                      <p class="subservice-tier-desc">Fast-paced vertical videos with 3-second hook retention, kinetic subtitles, sound engineering, and trending aesthetics.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Viral Hooks</span>
+                        <span>Kinetic Captions</span>
+                        <span>Audio Mastering</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Video-ShortForm-Reels" class="subservice-tier-btn">
+                        <span>Enquire for Short Video</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Tier 3: Technical Copywriting & Thought Leadership -->
+                  <div class="subservice-tier-item">
+                    <div class="subservice-tier-img-wrap">
+                      <img 
+                        src="/assets/images/digital-services/web-semi-dynamic.jpg" 
+                        alt="Editorial writing workspace with laptop" 
+                        class="subservice-tier-img" 
+                        loading="lazy" 
+                      />
+                      <span class="subservice-tier-badge">Thought Leadership</span>
+                    </div>
+                    <div class="subservice-tier-info">
+                      <h4 class="subservice-tier-title">Copywriting &amp; Thought Leadership</h4>
+                      <p class="subservice-tier-desc">In-depth technical whitepapers, case studies, landing page conversion copy, and executive LinkedIn thought leadership.</p>
+                      <div class="subservice-tier-tags">
+                        <span>Technical Whitepapers</span>
+                        <span>Conversion Copy</span>
+                        <span>Case Studies</span>
+                      </div>
+                      <a href="/pages/enquiry/enquiry.html?service=Content-Technical-Copywriting" class="subservice-tier-btn">
+                        <span>Enquire for Copywriting</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Reference Callout Banner matching UI design -->
+        <div class="digital-reference-callout">
+          <div class="digital-callout-left">
+            <div class="digital-callout-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3 class="digital-callout-title">Tailored Strategic Consultation</h3>
+              <p class="digital-callout-text">
+                Every business has unique growth milestones. Our engineering and creative teams deliver tailor-made digital strategies focused on speed, brand prestige, and measurable conversion.
+              </p>
+            </div>
+          </div>
+          <a href="/pages/enquiry/enquiry.html" class="digital-callout-cta">
+            <span>Enquire with Experts</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. CALL TO ACTION BANNER
+         ======================================================================== -->
+    <section class="digital-cta-section">
+      <div class="container">
+        <div class="digital-cta-card">
+          <div class="digital-cta-content">
+            <span class="digital-cta-tag">Ready to Accelerate?</span>
+            <h2 class="digital-cta-heading">Let's Build Your Digital Advantage Together</h2>
+            <p class="digital-cta-text">
+              From bespoke web and mobile engineering to complete brand and marketing campaigns, TECTORA provides end-to-end digital solutions that convert visitors into valuable customers.
+            </p>
+          </div>
+          <div class="digital-cta-actions">
+            <a href="/pages/enquiry/enquiry.html" class="digital-btn-gold">
+              <span>Start Your Project</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="https://wa.me/919250134882?text=Hello%20I%20want%20to%20consult%20on%20Digital%20Services" class="digital-btn-outline" target="_blank" rel="noopener noreferrer">
+              Talk to Specialist on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       5. CONTACT FOOTER (Consistent with TECTORA Brand)
+       ======================================================================== -->
+  <footer class="tectora-footer-light" id="contact">
+    <div class="container">
+      <div class="footer-contact-wrapper">
+        
+        <!-- Brand & Contact Details -->
+        <div class="footer-contact-details">
+          <a href="/index.html" class="footer-brand-wrap" aria-label="TECTORA Home">
+            <img src="/assets/images/tectora-logo-new.png" alt="TECTORA" class="footer-brand-logo" />
+          </a>
+          <p class="footer-brand-tagline">
+            Smart Infrastructure Procurement, Verified Commercial Land &amp; Turnkey Engineering Execution.
+          </p>
+
+          <h4 class="footer-contact-heading">Contact</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </span>
+              <span class="footer-contact-label">Email:</span>
+              <a href="mailto:tectorapvtltd@gmail.com" class="footer-contact-link">tectorapvtltd@gmail.com</a>
+            </li>
+
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </span>
+              <span class="footer-contact-label">Phone:</span>
+              <a href="tel:+919250134882" class="footer-contact-link">+91 9250134882</a>
+            </li>
+
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </span>
+              <span class="footer-contact-label">Facebook:</span>
+              <a href="https://www.facebook.com/share/1DHtPNFAA8/" target="_blank" rel="noopener noreferrer" class="footer-contact-link">https://www.facebook.com/share/1DHtPNFAA8/</a>
+            </li>
+
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg>
+              </span>
+              <span class="footer-contact-label">Instagram:</span>
+              <a href="https://www.instagram.com/tectora.official/" target="_blank" rel="noopener noreferrer" class="footer-contact-link">@tectora.official</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Instagram QR Code -->
+        <div class="footer-qr-card">
+          <div class="footer-qr-frame">
+            <img src="/assets/images/instagram-qr.png" alt="Instagram QR Code for @tectora.official" class="footer-qr-img" width="140" height="140" />
+          </div>
+          <div class="footer-qr-meta">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-qr-insta-icon">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+            <span class="footer-qr-label">Follow us on Instagram</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Legal bar -->
+      <div class="footer-legal-bar">
+        <div>&copy; 2026 TECTORA Technologies Ltd. All rights reserved.</div>
+        <div>Spaces for a Better Tomorrow</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919250134882?text=Hello%20I%20want%20to%20enquire%20about%20your%20digital%20services" 
+     class="floating-whatsapp-btn" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with us on WhatsApp"
+     title="Chat with us on WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- Interactive Scripts -->
+  <script src="/scripts/main.js"></script>
+  <script src="/scripts/digital-services.js"></script>
+</body>
+</html>

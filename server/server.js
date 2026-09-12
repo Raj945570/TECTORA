@@ -46,6 +46,11 @@ app.get(['/services.html', '/pages/services.html'], protectPage, (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'services.html'));
 });
 
+// Digital Services Route (Public Showcase & Solutions)
+app.get(['/digital-services.html', '/pages/digital-services.html', '/pages/services/digital-services.html'], (req, res) => {
+  res.sendFile(path.join(PUBLIC_DIR, 'digital-services.html'));
+});
+
 // Subpage direct routes
 app.get(['/materials.html', '/pages/services/materials.html'], protectPage, (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'pages', 'services', 'materials.html'));
