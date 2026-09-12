@@ -36,17 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const label = card.querySelector('.service-card-expand-label span');
     if (label) label.textContent = 'Collapse Solutions';
     activeCard = card;
-
-    // Smooth scroll to keep the expanded section comfortably in view
-    setTimeout(() => {
-      const rect = card.getBoundingClientRect();
-      if (rect.top < 90) {
-        window.scrollTo({
-          top: window.pageYOffset + rect.top - 100,
-          behavior: 'smooth'
-        });
-      }
-    }, 200);
   }
 
   /**

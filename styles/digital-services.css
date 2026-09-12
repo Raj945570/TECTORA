@@ -13,14 +13,14 @@
   --text-sub: #4A5568;
 }
 
-/* 1. Page Background — Strictly using the provided background */
+/* 1. Page Background — Clean, Minimal Warm Gradient (No Rings or Patterns) */
 .digital-page {
   background-color: #FAF8F5;
-  background-image: url('/assets/images/digital-services/digital-services-bg.jpg');
-  background-size: cover;
-  background-position: center top;
+  background-image: 
+    radial-gradient(ellipse at 15% 10%, rgba(245, 239, 228, 0.7) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 65%, rgba(244, 237, 222, 0.55) 0%, transparent 60%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 25%, #F6F2EA 75%, #FAF8F5 100%);
   background-repeat: no-repeat;
-  background-attachment: fixed;
   min-height: 100vh;
   color: var(--text-dark);
   font-family: var(--font-sans, 'Inter', sans-serif);
@@ -225,11 +225,10 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.3s ease;
-  box-shadow: 0 6px 20px rgba(11, 31, 58, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(11, 31, 58, 0.04);
   display: flex;
   flex-direction: column;
   outline: none;
@@ -249,12 +248,12 @@
   transition: opacity 0.3s ease;
 }
 
-/* Hover Animation: Lift + Shadow + Gold Glow */
+/* Hover Animation: Lift + Shadow + Gold Glow (Smooth & Lightweight) */
 .service-card-item:hover {
-  transform: translateY(-6px);
-  border-color: rgba(212, 175, 55, 0.6);
-  box-shadow: 0 16px 36px -8px rgba(11, 31, 58, 0.08),
-              0 0 24px rgba(212, 175, 55, 0.2);
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 10px 24px -4px rgba(11, 31, 58, 0.08),
+              0 0 14px rgba(212, 175, 55, 0.12);
 }
 
 .service-card-item:hover::before {
@@ -264,8 +263,8 @@
 /* Active / Expanded State */
 .service-card-item.is-expanded {
   border-color: var(--gold-accent);
-  box-shadow: 0 22px 48px -10px rgba(11, 31, 58, 0.12),
-              0 0 32px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 14px 30px -6px rgba(11, 31, 58, 0.1),
+              0 0 16px rgba(212, 175, 55, 0.15);
   background: #FFFFFF;
 }
 
@@ -447,16 +446,15 @@
   border: 1px solid rgba(229, 231, 235, 0.9);
   border-radius: 14px;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
 .subservice-tier-item:hover {
   background: #FFFFFF;
-  border-color: rgba(212, 175, 55, 0.6);
-  box-shadow: 0 8px 22px rgba(11, 31, 58, 0.06),
-              0 0 12px rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 6px 18px rgba(11, 31, 58, 0.06);
   transform: translateY(-2px);
 }
 
@@ -472,12 +470,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.45s ease;
+  transition: transform 0.35s ease;
   display: block;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .subservice-tier-item:hover .subservice-tier-img {
-  transform: scale(1.05);
+  transform: scale(1.03) translateZ(0);
 }
 
 .subservice-tier-badge {
@@ -485,7 +485,6 @@
   top: 10px;
   left: 10px;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(4px);
   color: var(--navy-primary);
   font-size: 0.7rem;
   font-weight: 700;
@@ -645,3 +644,191 @@
     padding: 24px;
   }
 }
+
+/* ==========================================================================
+   7. CALL TO ACTION (CTA) SECTION — PREMIUM 2-COLUMN CONVERSION CARD
+   ========================================================================== */
+.digital-cta-section {
+  padding: 30px 0 90px;
+  background: transparent;
+  position: relative;
+}
+
+.digital-cta-card {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FAF7F2 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 20px;
+  padding: 48px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 14px 36px -10px rgba(11, 31, 58, 0.07),
+              0 0 20px rgba(212, 175, 55, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gold top border accent */
+.digital-cta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #C59F2D 0%, #D4AF37 50%, #E8C868 100%);
+}
+
+/* Left Column: Content */
+.digital-cta-content {
+  flex: 1;
+  max-width: 680px;
+}
+
+.digital-cta-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.08);
+}
+
+.digital-cta-heading {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.75rem, 2.5vw, 2.35rem);
+  font-weight: 700;
+  color: var(--navy-primary);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin-bottom: 14px;
+}
+
+.digital-cta-text {
+  font-size: 0.98rem;
+  color: var(--text-sub);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Right Column: Actions */
+.digital-cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  flex-shrink: 0;
+  min-width: 210px;
+}
+
+/* Primary Button: Exact original TECTORA button design (Deep Navy #0B1F3A) */
+.digital-cta-btn-primary {
+  height: 46px;
+  padding: 0 26px;
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  border: 1px solid var(--navy-primary);
+  border-radius: 8px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(11, 31, 58, 0.14);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.digital-cta-btn-primary:hover {
+  background-color: #132E52;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(11, 31, 58, 0.22);
+}
+
+.digital-cta-btn-primary svg {
+  transition: transform 0.2s ease;
+}
+
+.digital-cta-btn-primary:hover svg {
+  transform: translateX(3px);
+}
+
+/* Secondary Link: Clean WhatsApp option */
+.digital-cta-btn-whatsapp {
+  height: 44px;
+  padding: 0 22px;
+  background-color: #FFFFFF;
+  color: #128C7E;
+  border: 1px solid rgba(18, 140, 126, 0.35);
+  border-radius: 8px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(18, 140, 126, 0.08);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.digital-cta-btn-whatsapp:hover {
+  background-color: #128C7E;
+  color: #FFFFFF;
+  border-color: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(18, 140, 126, 0.22);
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+  .digital-cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 38px 32px;
+    gap: 28px;
+  }
+
+  .digital-cta-actions {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .digital-cta-btn-primary,
+  .digital-cta-btn-whatsapp {
+    flex: 1;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 540px) {
+  .digital-cta-card {
+    padding: 28px 20px;
+  }
+
+  .digital-cta-actions {
+    flex-direction: column;
+  }
+
+  .digital-cta-btn-primary,
+  .digital-cta-btn-whatsapp {
+    width: 100%;
+  }
+}
+
