@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Experts & Consultants — TECTORA</title>
-  <meta name="description" content="Audited Grade-A engineering specialists, MEP consultants, and structural experts with verified execution records." />
+  <title>Experts — Under Development — TECTORA</title>
+  <meta name="description" content="Verified Experts & Engineering Consultants on TECTORA. This feature is currently under development and will be available soon." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,13 +14,192 @@
   <link rel="stylesheet" href="/styles/navbar.css" />
   <link rel="stylesheet" href="/styles/sections.css" />
 
-  <!-- Auth Gatekeeper: Requires authentication -->
+  <!-- Auth Gatekeeper -->
   <script src="/scripts/auth-guard.js"></script>
   <script>
     if (window.TectoraAuth) {
       window.TectoraAuth.requireAuth();
     }
   </script>
+
+  <style>
+    .placeholder-main {
+      min-height: calc(100vh - 80px - 280px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(40px, 6vw, 72px) 0 clamp(48px, 6vw, 84px);
+      background: radial-gradient(circle at 50% 18%, rgba(200, 164, 93, 0.06) 0%, transparent 65%), var(--bg-page, #FAFAF8);
+    }
+
+    .placeholder-breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: clamp(24px, 3.5vw, 36px);
+      font-size: 0.9rem;
+    }
+
+    .placeholder-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--navy-primary, #0B1F3A);
+      text-decoration: none;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .placeholder-back-link:hover {
+      color: var(--gold-accent, #C8A45D);
+      transform: translateX(-3px);
+    }
+
+    .breadcrumb-separator {
+      color: #CBD5E1;
+      user-select: none;
+    }
+
+    .breadcrumb-current {
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    .placeholder-card-stage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .placeholder-card {
+      background: var(--bg-card, #FFFFFF);
+      border: 1px solid rgba(200, 164, 93, 0.28);
+      border-radius: 18px;
+      box-shadow: 0 12px 36px rgba(11, 31, 58, 0.05);
+      padding: clamp(40px, 5vw, 60px) clamp(24px, 4vw, 52px);
+      max-width: 620px;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .placeholder-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-light, #F4EFE6);
+      color: #8C6B2D;
+      border: 1px solid rgba(200, 164, 93, 0.35);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .badge-pulsing-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--gold-accent, #C8A45D);
+    }
+
+    .placeholder-icon-wrap {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FDFBF7 0%, #F4EFE6 100%);
+      border: 1px solid rgba(200, 164, 93, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      box-shadow: 0 6px 18px rgba(200, 164, 93, 0.14);
+    }
+
+    .placeholder-icon-svg {
+      width: 36px;
+      height: 36px;
+      color: var(--navy-primary, #0B1F3A);
+    }
+
+    .placeholder-category-pill {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-accent, #C8A45D);
+      margin-bottom: 12px;
+    }
+
+    .placeholder-heading {
+      font-family: var(--font-serif, 'Playfair Display', serif);
+      font-size: clamp(2rem, 3.2vw, 2.5rem);
+      font-weight: 700;
+      color: var(--navy-primary, #0B1F3A);
+      margin: 0 0 16px 0;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .placeholder-subtext {
+      font-family: var(--font-sans, 'Inter', sans-serif);
+      font-size: clamp(0.96rem, 1.05vw, 1.04rem);
+      color: #64748B;
+      line-height: 1.68;
+      margin: 0 0 24px 0;
+      max-width: 480px;
+    }
+
+    .placeholder-context-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      color: #475569;
+      margin-bottom: 32px;
+    }
+
+    .placeholder-context-meta svg {
+      flex-shrink: 0;
+      stroke: var(--gold-accent, #C8A45D);
+    }
+
+    .placeholder-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--navy-primary, #0B1F3A);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-family: var(--font-sans, 'Inter', sans-serif);
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 13px 30px;
+      border-radius: 8px;
+      transition: all 0.22s ease;
+      box-shadow: 0 4px 14px rgba(11, 31, 58, 0.15);
+    }
+
+    .placeholder-btn-primary:hover {
+      background-color: var(--gold-accent, #C8A45D);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(200, 164, 93, 0.28);
+    }
+  </style>
 </head>
 <body>
 
@@ -35,7 +214,7 @@
         <ul class="nav-links-list">
           <li class="nav-link-item"><a href="/index.html#home" class="nav-link">Home</a></li>
           <li class="nav-link-item"><a href="/index.html#about" class="nav-link">About</a></li>
-          <li class="nav-link-item"><a href="/pages/services/commercial.html" class="nav-link">Digital Services</a></li>
+          <li class="nav-link-item"><a href="/digital-services.html" class="nav-link">Digital Services</a></li>
           <li class="nav-link-item"><a href="/services.html" class="nav-link is-active">Services</a></li>
           <li class="nav-link-item"><a href="/index.html#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -58,369 +237,83 @@
     </div>
   </header>
 
-  <main>
-    <!-- A. Hero Section (Title + 2 lines max description) -->
-    <section class="seller-page-hero">
-      <div class="container">
-        <div class="service-breadcrumb">
-          <a href="/index.html">Platform</a> &nbsp;/&nbsp; <span>Experts &amp; Consultants</span>
-        </div>
-        <h1 class="service-hero-title">Experts &amp; Consultants</h1>
-        <p class="service-hero-desc">
-          Audited Grade-A engineering specialists, MEP consultants, and structural experts with verified execution records and certified quality compliance.
-        </p>
+  <main class="placeholder-main">
+    <div class="container">
+      
+      <!-- Back Navigation / Breadcrumb -->
+      <nav class="placeholder-breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="/services.html" class="placeholder-back-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Services</span>
+        </a>
+        <span class="breadcrumb-separator" aria-hidden="true">/</span>
+        <span class="breadcrumb-current">Experts</span>
+      </nav>
 
-        <div class="seller-hero-stats">
-          <div class="seller-hero-stat-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Class-A EPC Audited</span>
-          </div>
-          <div class="seller-hero-stat-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>ISO 9001 &amp; 45001 Certified</span>
-          </div>
-          <div class="seller-hero-stat-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>LOD 400 BIM Capable</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- B. Contractors & Consultants Grid Layout (Future Seller Data) -->
-    <section class="seller-listing-section">
-      <div class="container">
-        <div class="seller-controls-bar">
-          <div class="seller-filter-tabs">
-            <a href="javascript:void(0)" class="seller-filter-tab is-active">All Partners</a>
-            <a href="javascript:void(0)" class="seller-filter-tab">Turnkey EPC Builders</a>
-            <a href="javascript:void(0)" class="seller-filter-tab">MEP &amp; HVAC</a>
-            <a href="javascript:void(0)" class="seller-filter-tab">Structural &amp; BIM</a>
-            <a href="javascript:void(0)" class="seller-filter-tab">Geotechnical</a>
-          </div>
-          <div class="seller-search-box">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" placeholder="Search contractors, specializations, or licenses..." />
-          </div>
-        </div>
-
-        <div class="seller-listing-grid">
-          <!-- Contractor 1 -->
-          <div class="seller-card">
-            <div class="seller-header-row">
-              <div class="seller-title-wrap">
-                <h3 class="seller-name">Apex Civil Projects EPC Ltd</h3>
-                <div class="seller-location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  <span>National Infrastructure &amp; Commercial Builder</span>
-                </div>
-              </div>
-              <span class="seller-verified-badge">✓ Class-A EPC</span>
-            </div>
-            <p class="seller-desc">
-              Specialized in high-rise corporate towers, IT campuses, and composite steel-concrete structures with self-climbing formwork fleets.
-            </p>
-            <div class="seller-tags-row">
-              <span class="seller-tag-item">EPC Turnkey</span>
-              <span class="seller-tag-item">Aluform Systems</span>
-              <span class="seller-tag-item">Zero-Accident Safety</span>
-            </div>
-            <div class="seller-specs-row">
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">Delivered Area</span>
-                <span class="seller-spec-val">12.4M sq.ft.</span>
-              </div>
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">Project Scale</span>
-                <span class="seller-spec-val">₹25 Cr – ₹500 Cr</span>
-              </div>
-            </div>
-            <div class="seller-footer-actions">
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-quote">Request EPC Tender</a>
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-outline">Portfolio</a>
-            </div>
+      <!-- Center Card Stage -->
+      <div class="placeholder-card-stage">
+        <div class="placeholder-card">
+          
+          <!-- Light Gold Coming Soon Badge -->
+          <div class="placeholder-status-badge">
+            <span class="badge-pulsing-dot" aria-hidden="true"></span>
+            <span>Coming Soon</span>
           </div>
 
-          <!-- Contractor 2 -->
-          <div class="seller-card">
-            <div class="seller-header-row">
-              <div class="seller-title-wrap">
-                <h3 class="seller-name">Sterling MEP &amp; HVAC Dynamics</h3>
-                <div class="seller-location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  <span>Electro-Mechanical Engineering Division</span>
-                </div>
-              </div>
-              <span class="seller-verified-badge">✓ MEP Certified</span>
-            </div>
-            <p class="seller-desc">
-              Integrated building services including central water-cooled chiller plants, NFPA fire suppression, high-voltage substations, and BMS integration.
-            </p>
-            <div class="seller-tags-row">
-              <span class="seller-tag-item">ASHRAE 90.1</span>
-              <span class="seller-tag-item">NFPA Compliant</span>
-              <span class="seller-tag-item">Smart IBMS</span>
-            </div>
-            <div class="seller-specs-row">
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">Executed Plants</span>
-                <span class="seller-spec-val">68+ Mega Assets</span>
-              </div>
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">HVAC Capacity</span>
-                <span class="seller-spec-val">Up to 6,000 TR</span>
-              </div>
-            </div>
-            <div class="seller-footer-actions">
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-quote">Request Proposal</a>
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-outline">Credentials</a>
-            </div>
+          <!-- Subtle Icon -->
+          <div class="placeholder-icon-wrap">
+            <svg class="placeholder-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
           </div>
 
-          <!-- Contractor 3 -->
-          <div class="seller-card">
-            <div class="seller-header-row">
-              <div class="seller-title-wrap">
-                <h3 class="seller-name">Matrix Structural &amp; BIM Lab</h3>
-                <div class="seller-location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  <span>Chartered Engineering Advisory</span>
-                </div>
-              </div>
-              <span class="seller-verified-badge">✓ Peer Certified</span>
-            </div>
-            <p class="seller-desc">
-              Non-linear dynamic structural analysis, Seismic Zone V design peer reviews, and full LOD 400 clash-free BIM federated coordination.
-            </p>
-            <div class="seller-tags-row">
-              <span class="seller-tag-item">Seismic Zone V</span>
-              <span class="seller-tag-item">LOD 400 BIM</span>
-              <span class="seller-tag-item">Value Engineering</span>
-            </div>
-            <div class="seller-specs-row">
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">Chartered Lead</span>
-                <span class="seller-spec-val">IIT / NIT Fellows</span>
-              </div>
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">Steel Optimisation</span>
-                <span class="seller-spec-val">12% - 18% Avg</span>
-              </div>
-            </div>
-            <div class="seller-footer-actions">
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-quote">Structural Review</a>
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-outline">Case Studies</a>
-            </div>
-          </div>
+          <div class="placeholder-category-pill">Experts</div>
 
-          <!-- Contractor 4 -->
-          <div class="seller-card">
-            <div class="seller-header-row">
-              <div class="seller-title-wrap">
-                <h3 class="seller-name">BlueSky Facade Engineering</h3>
-                <div class="seller-location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  <span>Automated Glazing Fabrication Yard</span>
-                </div>
-              </div>
-              <span class="seller-verified-badge">✓ Facade Audited</span>
-            </div>
-            <p class="seller-desc">
-              Unitized curtain wall systems, thermal break double-glazed units (DGU), and parametric architectural louvers tested for hurricane wind pressures.
-            </p>
-            <div class="seller-tags-row">
-              <span class="seller-tag-item">Unitized Curtain</span>
-              <span class="seller-tag-item">DGU Acoustic 42dB</span>
-              <span class="seller-tag-item">Wind Tunnel Test</span>
-            </div>
-            <div class="seller-specs-row">
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">Annual Fabric</span>
-                <span class="seller-spec-val">250,000 m²</span>
-              </div>
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">Warranty</span>
-                <span class="seller-spec-val">15 Yrs System</span>
-              </div>
-            </div>
-            <div class="seller-footer-actions">
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-quote">Request Facade RFQ</a>
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-outline">Testing Videos</a>
-            </div>
-          </div>
+          <!-- Main Heading -->
+          <h1 class="placeholder-heading">Under Development</h1>
 
-          <!-- Contractor 5 -->
-          <div class="seller-card">
-            <div class="seller-header-row">
-              <div class="seller-title-wrap">
-                <h3 class="seller-name">Terra Firma Geotechnical &amp; Piling</h3>
-                <div class="seller-location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  <span>Heavy Foundation Engineering Fleet</span>
-                </div>
-              </div>
-              <span class="seller-verified-badge">✓ Fleet Verified</span>
-            </div>
-            <p class="seller-desc">
-              Large-diameter bored cast-in-situ piling rigs, diaphragm wall execution, rock socketing, and bi-directional static load testing.
-            </p>
-            <div class="seller-tags-row">
-              <span class="seller-tag-item">Bored Piling 1.5m</span>
-              <span class="seller-tag-item">Diaphragm Walls</span>
-              <span class="seller-tag-item">Sonic Caliper Test</span>
-            </div>
-            <div class="seller-specs-row">
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">Hydraulic Rigs</span>
-                <span class="seller-spec-val">18 Soilmec Rigs</span>
-              </div>
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">Max Depth</span>
-                <span class="seller-spec-val">52 Meters</span>
-              </div>
-            </div>
-            <div class="seller-footer-actions">
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-quote">Schedule Soil Rig</a>
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-outline">Equipment List</a>
-            </div>
-          </div>
-
-          <!-- Contractor 6 -->
-          <div class="seller-card">
-            <div class="seller-header-row">
-              <div class="seller-title-wrap">
-                <h3 class="seller-name">Pinnacle PMC &amp; Technical Audit</h3>
-                <div class="seller-location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  <span>Independent Developer PMO Unit</span>
-                </div>
-              </div>
-              <span class="seller-verified-badge">✓ FIDIC Certified</span>
-            </div>
-            <p class="seller-desc">
-              Independent site quality surveillance, concrete cube crush verification, project critical-path scheduling (Primavera P6), and bill validation.
-            </p>
-            <div class="seller-tags-row">
-              <span class="seller-tag-item">FIDIC Contract</span>
-              <span class="seller-tag-item">Primavera P6</span>
-              <span class="seller-tag-item">Quantity Audit</span>
-            </div>
-            <div class="seller-specs-row">
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">Managed Capex</span>
-                <span class="seller-spec-val">₹3,400 Cr+</span>
-              </div>
-              <div class="seller-spec-unit">
-                <span class="seller-spec-label">Cost Containment</span>
-                <span class="seller-spec-val">8.4% Variance</span>
-              </div>
-            </div>
-            <div class="seller-footer-actions">
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-quote">Engage PMC</a>
-              <a href="/pages/enquiry/enquiry.html?service=contractors" class="seller-btn-outline">Audit Scope</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- C. Details Section (Offerings & Bullet Points) -->
-    <section class="service-details-section">
-      <div class="container">
-        <div class="section-tag">Partner Network</div>
-        <h2 class="section-title">Institutional Engineering Execution</h2>
-        <p class="section-subtitle">
-          Connect with pre-screened civil contractors and specialized consultants adhering to zero-defect execution standards.
-        </p>
-
-        <!-- Offerings Grid -->
-        <div class="service-offerings-grid">
-          <div class="service-offering-card">
-            <span class="service-offering-num">Partner 01</span>
-            <h3 class="service-offering-title">General & EPC Contractors</h3>
-            <p class="service-offering-desc">
-              Class-A civil builders equipped for monolithic shear-wall, pre-stressed slab, and deep-foundation engineering across high-rise and infra assets.
-            </p>
-          </div>
-
-          <div class="service-offering-card">
-            <span class="service-offering-num">Partner 02</span>
-            <h3 class="service-offering-title">MEP & HVAC Specialists</h3>
-            <p class="service-offering-desc">
-              Integrated mechanical, electrical, and plumbing engineering contractors ensuring ASHRAE compliance, high-efficiency chillers, and smart building automation.
-            </p>
-          </div>
-
-          <div class="service-offering-card">
-            <span class="service-offering-num">Partner 03</span>
-            <h3 class="service-offering-title">Structural & BIM Consultants</h3>
-            <p class="service-offering-desc">
-              Chartered civil engineers providing Seismic Zone V structural modeling, peer-review certification, and full LOD 400 BIM coordination models.
-            </p>
-          </div>
-        </div>
-
-        <!-- Bullet Points of Offerings -->
-        <div class="service-bullets-wrap">
-          <h3 class="service-bullets-title">Auditing & Engagement Standards</h3>
-          <ul class="service-bullets-list">
-            <li class="service-bullet-item">
-              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Multi-tier financial liquidity and working capital audit</span>
-            </li>
-            <li class="service-bullet-item">
-              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Audited safety track record with zero-fatality verification standards</span>
-            </li>
-            <li class="service-bullet-item">
-              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Standardized FIDIC & institutional contract templates</span>
-            </li>
-            <li class="service-bullet-item">
-              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Automated RFQ bidding and comparative tender evaluation matrices</span>
-            </li>
-            <li class="service-bullet-item">
-              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Third-party milestone sign-offs prior to escrow stage releases</span>
-            </li>
-            <li class="service-bullet-item">
-              <svg class="service-bullet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Green building, LEED, and GRIHA certification advisory</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- C. CTA Section (Button: "Request a Quote") -->
-    <section class="service-cta-banner" id="quote">
-      <div class="container">
-        <div class="service-cta-inner">
-          <div class="section-tag">Tender Allocation</div>
-          <h2 class="service-cta-title">Engage Vetted EPC & Engineering Partners</h2>
-          <p class="service-cta-sub">
-            Post your project scope or tender requirements to receive audited contractor submissions within 7 business days.
+          <!-- Subtext -->
+          <p class="placeholder-subtext">
+            This feature will be available soon.<br />
+            Data will appear here once sellers and experts start listing their services and products.
           </p>
-          <div class="service-cta-btns">
-            <a href="/pages/enquiry/enquiry.html?service=contractors" class="btn btn-primary" style="height: 48px; padding: 0 32px;">
-              Request EPC Tender &rarr;
-            </a>
-            <a href="/index.html#offerings" class="btn btn-secondary" style="height: 48px; padding: 0 28px;">
-              Explore All Offerings
+
+          <!-- Internal Context Logic (Subtle Hint) -->
+          <div class="placeholder-context-meta">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span>Profiles will show when consultants register</span>
+          </div>
+
+          <!-- Action Button -->
+          <div class="placeholder-actions">
+            <a href="/services.html" class="placeholder-btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              <span>Back to Services</span>
             </a>
           </div>
+
         </div>
       </div>
-    </section>
+
+    </div>
   </main>
 
-  <!-- Minimal Consistent Footer -->
+  <!-- Footer -->
   <footer class="tectora-footer-light" id="contact">
     <div class="container">
       <div class="footer-contact-wrapper">
         
-        <!-- Brand & Contact Details -->
         <div class="footer-contact-details">
           <a href="/index.html" class="footer-brand-wrap" aria-label="TECTORA Home">
             <img src="/assets/images/tectora-logo-new.png" alt="TECTORA" class="footer-brand-logo" />
@@ -433,84 +326,48 @@
           <ul class="footer-contact-list">
             <li class="footer-contact-item">
               <span class="footer-contact-icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
               </span>
               <span class="footer-contact-label">Email:</span>
               <a href="mailto:tectorapvtltd@gmail.com" class="footer-contact-link">tectorapvtltd@gmail.com</a>
             </li>
-
             <li class="footer-contact-item">
               <span class="footer-contact-icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
               </span>
               <span class="footer-contact-label">Phone:</span>
-              <a href="tel:+919250134882" class="footer-contact-link">+91 9250134882</a>
-            </li>
-
-            <li class="footer-contact-item">
-              <span class="footer-contact-icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                </svg>
-              </span>
-              <span class="footer-contact-label">Facebook:</span>
-              <a href="https://www.facebook.com/share/1DHtPNFAA8/" target="_blank" rel="noopener noreferrer" class="footer-contact-link">https://www.facebook.com/share/1DHtPNFAA8/</a>
-            </li>
-
-            <li class="footer-contact-item">
-              <span class="footer-contact-icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                </svg>
-              </span>
-              <span class="footer-contact-label">Instagram:</span>
-              <a href="https://www.instagram.com/tectora.official/" target="_blank" rel="noopener noreferrer" class="footer-contact-link">@tectora.official</a>
+              <a href="tel:+919250134882" class="footer-contact-link">+91 92501 34882</a>
             </li>
           </ul>
         </div>
 
-        <!-- Instagram QR Code -->
+        <!-- Connect QR Code -->
         <div class="footer-qr-card">
           <div class="footer-qr-frame">
-            <img src="/assets/images/instagram-qr.png" alt="Instagram QR Code for @tectora.official" class="footer-qr-img" width="140" height="140" />
+            <img src="/assets/images/instagram-qr.png" alt="Scan to Connect on Instagram @tectora.official" class="footer-qr-img" width="140" height="140" loading="lazy" decoding="async" />
           </div>
           <div class="footer-qr-meta">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-qr-insta-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-qr-insta-icon" aria-hidden="true">
               <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
             </svg>
-            <span class="footer-qr-label">Follow us on Instagram</span>
+            <span class="footer-qr-label">Scan to Connect</span>
           </div>
         </div>
 
       </div>
 
-      <div class="footer-legal-bar">
-        <div>&copy; 2026 TECTORA Technologies Ltd. All rights reserved.</div>
-        <div>Experts &amp; Consultants</div>
+      <div class="footer-bottom-bar">
+        <div class="footer-bottom-left">
+          &copy; 2026 TECTORA Infrastructure Technologies Pvt. Ltd. All rights reserved.
+        </div>
+        <div class="footer-bottom-right">
+          <span>Enterprise Engineering &amp; Procurement Platform</span>
+        </div>
       </div>
     </div>
   </footer>
-
-  <!-- Floating WhatsApp Button (Bottom-Right Corner) -->
-  <a href="https://wa.me/919250134882?text=Hello%20I%20want%20to%20enquire%20about%20your%20services" 
-     class="floating-whatsapp-btn" 
-     target="_blank" 
-     rel="noopener noreferrer" 
-     aria-label="Chat with us on WhatsApp"
-     title="Chat with us on WhatsApp">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-    </svg>
-  </a>
 
   <script src="/scripts/main.js"></script>
 </body>

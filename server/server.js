@@ -56,12 +56,12 @@ app.get(['/materials.html', '/pages/services/materials.html'], protectPage, (req
   res.sendFile(path.join(PUBLIC_DIR, 'pages', 'services', 'materials.html'));
 });
 
-app.get(['/commercial.html', '/pages/services/commercial.html'], protectPage, (req, res) => {
-  res.sendFile(path.join(PUBLIC_DIR, 'pages', 'services', 'commercial.html'));
+app.get(['/commercial.html', '/real-estate.html', '/pages/services/commercial.html', '/pages/services/real-estate.html'], protectPage, (req, res) => {
+  res.sendFile(path.join(PUBLIC_DIR, 'pages', 'services', 'real-estate.html'));
 });
 
-app.get(['/contractors.html', '/pages/services/contractors.html'], protectPage, (req, res) => {
-  res.sendFile(path.join(PUBLIC_DIR, 'pages', 'services', 'contractors.html'));
+app.get(['/contractors.html', '/experts.html', '/pages/services/contractors.html', '/pages/services/experts.html'], protectPage, (req, res) => {
+  res.sendFile(path.join(PUBLIC_DIR, 'pages', 'services', 'experts.html'));
 });
 
 app.get(['/eco.html', '/pages/services/eco.html'], protectPage, (req, res) => {

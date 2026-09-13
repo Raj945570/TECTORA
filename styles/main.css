@@ -342,42 +342,58 @@ body {
   text-decoration: underline;
 }
 
-/* Instagram QR Code Card */
-.footer-qr-card {
+/* Instagram / Connect QR Code Card */
+.footer-qr-card,
+.footer-qr-container {
   flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
   background: #FFFFFF;
-  border: 1.5px solid var(--border-card);
-  border-radius: 16px;
-  padding: 22px 26px;
-  box-shadow: 0 6px 20px rgba(11, 31, 58, 0.06);
+  border: 1px solid var(--border-light, #E2E8F0);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 16px rgba(11, 31, 58, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  margin-left: auto;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.footer-qr-card:hover {
+.footer-qr-card:hover,
+.footer-qr-container:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(11, 31, 58, 0.1);
+  box-shadow: 0 10px 24px rgba(11, 31, 58, 0.09);
   border-color: var(--gold-accent);
 }
 
 .footer-qr-frame {
   width: 140px;
   height: 140px;
-  padding: 6px;
+  max-width: 150px;
+  max-height: 150px;
+  aspect-ratio: 1 / 1;
+  padding: 4px;
   background: #FFFFFF;
-  border-radius: 10px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.footer-qr-img {
+.footer-qr-img,
+.footer-qr-image {
   width: 100%;
   height: 100%;
+  max-width: 140px;
+  max-height: 140px;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
@@ -385,16 +401,30 @@ body {
 }
 
 .footer-qr-meta {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   color: var(--navy-primary);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-qr-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--navy-primary);
+  letter-spacing: 0.02em;
 }
 
 .footer-qr-insta-icon {
   color: #E1306C;
+  flex-shrink: 0;
 }
 
 .footer-legal-bar {
@@ -444,11 +474,12 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 36px;
+    gap: 32px;
   }
 
   .footer-contact-details {
     max-width: 100%;
+    width: 100%;
   }
 
   .footer-contact-heading {
@@ -458,6 +489,32 @@ body {
   .footer-contact-item {
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .footer-qr-card,
+  .footer-qr-container {
+    margin: 0 auto;
+    padding: 16px 18px;
+    align-self: center;
+  }
+
+  .footer-qr-frame {
+    width: 115px;
+    height: 115px;
+    max-width: 115px;
+    max-height: 115px;
+    margin-bottom: 8px;
+  }
+
+  .footer-qr-img,
+  .footer-qr-image {
+    max-width: 115px;
+    max-height: 115px;
+  }
+
+  .footer-qr-meta,
+  .footer-qr-label {
+    font-size: 0.78rem;
   }
 
   .footer-legal-bar {
